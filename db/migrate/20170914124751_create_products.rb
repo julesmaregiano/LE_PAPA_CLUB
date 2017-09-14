@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.references :type, foreign_key: true
       t.references :size, foreign_key: true
       t.string :link
-      t.enum :price
+      t.integer :price
 
       t.timestamps
     end

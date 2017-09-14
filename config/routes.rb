@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :articles
-  resources :products, only [ :index, :show]
+  resources :products, only: [ :index, :show]
 
 end
