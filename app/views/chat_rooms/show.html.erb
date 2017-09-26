@@ -25,7 +25,6 @@
             event.preventDefault();
             $("#new_post").submit();
             setTimeout(function(){scrollLastPostIntoView();}, 100);
-            $("#post_content").focus();
         }
       });
 
@@ -36,7 +35,7 @@
       {
         received: (data) => {
           if (data.current_user_id !== <%= current_user.id %>) {
-            const postsContainer = document.querySelector('.post');
+            const postsContainer = document.querySelector('.posts');
             postsContainer.insertAdjacentHTML('beforeend', data.post_partial);
             scrollLastPostIntoView();
           }
