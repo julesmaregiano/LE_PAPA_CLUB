@@ -40,11 +40,18 @@ ChatRoom.create(name: "Urgence")
 ChatRoom.create(name: "Pratique")
 puts "Chatrooms créés"
 
+Message.create(content: "Bla!", user_id: users.sample)
+Message.create(content: "Bla!", user_id: users.sample)
+Message.create(content: "Bla!", user_id: users.sample)
+Message.create(content: "Bla!", user_id: users.sample)
+Message.create(content: "Bla!", user_id: users.sample)
+puts "Messages créés"
+
+posts = [1, 2, 3, 4]
 chat_rooms = [1, 2, 3, 4]
 
-Message.create(content: "Bla!", user_id: users.sample, chat_room_id: chat_rooms.sample)
-Message.create(content: "Bla!", user_id: users.sample, chat_room_id: chat_rooms.sample)
-Message.create(content: "Bla!", user_id: users.sample, chat_room_id: chat_rooms.sample)
-Message.create(content: "Bla!", user_id: users.sample, chat_room_id: chat_rooms.sample)
-Message.create(content: "Bla!", user_id: users.sample, chat_room_id: chat_rooms.sample)
-puts "Messages créés"
+Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", message: Message.all.sample)
+Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", message: Message.all.sample)
+Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", message: Message.all.sample)
+Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", message: Message.all.sample)
+puts "Posts créés"
