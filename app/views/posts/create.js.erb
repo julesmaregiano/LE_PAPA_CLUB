@@ -2,7 +2,7 @@
   // handle validation errors later
 <% else %>
   const postsContainer = document.querySelector('.posts');
-  postsContainer.insertAdjacentHTML('beforeend', '<%= j render "post", post: @post, user_is_post_author: true %>');
+  postsContainer.insertAdjacentHTML('beforeend', '<%= j render "post", post: @post, user_is_posts_author: true %>');
   const input = document.querySelector('#post_content');
   input.value = '';
   input.blur();
