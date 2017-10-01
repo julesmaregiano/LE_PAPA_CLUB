@@ -1,12 +1,13 @@
 class MessagesController < ApplicationController
+
   def create
     @message = Message.new(message_params)
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     @message.post = @post
     @message.user = current_user
     if @message.save
       respond_to do |format|
-        format.html { redirect_to post_path(@post) }
+        format.html { redirect_to chat_room_post_path(@post.chat) }
         format.js
       end
     else

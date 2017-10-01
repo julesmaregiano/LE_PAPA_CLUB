@@ -8,7 +8,6 @@ class PostsController < ApplicationController
     @post = Post.includes(messages: :user).find(params[:id])
   end
 
-
   def create
     @post = Post.new(post_params)
     @chat_room = ChatRoom.find(params[:chat_room_id])
