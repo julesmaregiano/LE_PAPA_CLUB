@@ -15,16 +15,6 @@ ActiveRecord::Schema.define(version: 20170926113309) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answers", force: :cascade do |t|
-    t.bigint "message_id"
-    t.bigint "user_id"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["message_id"], name: "index_answers_on_message_id"
-    t.index ["user_id"], name: "index_answers_on_user_id"
-  end
-
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -137,14 +127,11 @@ ActiveRecord::Schema.define(version: 20170926113309) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "answers", "messages"
-  add_foreign_key "answers", "users"
   add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "babies", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
-  add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "chat_rooms"
   add_foreign_key "posts", "messages"

@@ -10,6 +10,8 @@ puts "Destruction de la DB"
 Article.destroy_all
 Category.destroy_all
 User.destroy_all
+Message.destroy_all
+Post.destroy_all
 # Baby.destroy_all
 # Products.destroy_all
 
@@ -50,8 +52,8 @@ puts "Messages créés"
 posts = [1, 2, 3, 4]
 chat_rooms = [1, 2, 3, 4]
 
-Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", message: Message.all.sample)
-Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", message: Message.all.sample)
-Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", message: Message.all.sample)
-Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", message: Message.all.sample)
+Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", messages: Message.all.sample)
+Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", messages: Message.all.sample)
+Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", messages: Message.all.sample)
+Post.create(chat_room_id: chat_rooms.sample, user_id: users.sample, content: "Blabla, texte du post", messages: Message.all.sample)
 puts "Posts créés"
