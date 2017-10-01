@@ -1,0 +1,6 @@
+<%= @article.title %>
+<%= @article.content %>
+
+<% @article.comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>

@@ -6,9 +6,17 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show, :create, :new, :delete] do
       resources :messages, only: [:create]
       end
+
+    resources :messages, only: [:create] do
+      resources :answers, only: [:show, :create, :new, :delete]
+    end
   end
 
-  resources :articles
+  resources :articles, only: [ :index, :show] do
+    resources :comments, only: [:show, :create, :new, :delete]
+
+  end
+
   resources :products, only: [ :index, :show]
 
 end
