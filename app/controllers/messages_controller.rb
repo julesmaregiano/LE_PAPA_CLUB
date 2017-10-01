@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @message.user = current_user
     if @message.save
       respond_to do |format|
-        format.html { redirect_to chat_room_post_path(@post.chat) }
+        format.html { redirect_to chat_room_post_path(@post) }
         format.js
       end
     else
