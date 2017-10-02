@@ -10,7 +10,7 @@ puts "Destruction de la DB"
 Article.destroy_all
 Category.destroy_all
 User.destroy_all
-# Baby.destroy_all
+Baby.destroy_all
 # Products.destroy_all
 
 User.create(email: "jules@lepapa.club", first_name: "Jules", last_name: "Maregiano", date_of_birth: "26/07/1988", couple_situation: 1, role: 1, password: "123soleil")

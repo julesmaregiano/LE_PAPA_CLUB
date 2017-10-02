@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926113309) do
+ActiveRecord::Schema.define(version: 20171001192853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "answers", force: :cascade do |t|
-    t.bigint "message_id"
-    t.bigint "user_id"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["message_id"], name: "index_answers_on_message_id"
-    t.index ["user_id"], name: "index_answers_on_user_id"
-  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -75,18 +65,18 @@ ActiveRecord::Schema.define(version: 20170926113309) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_messages_on_post_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.bigint "chat_room_id"
-    t.bigint "message_id"
     t.bigint "user_id"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_posts_on_chat_room_id"
-    t.index ["message_id"], name: "index_posts_on_message_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -137,17 +127,14 @@ ActiveRecord::Schema.define(version: 20170926113309) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "answers", "messages"
-  add_foreign_key "answers", "users"
   add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "babies", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
-  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "posts"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "chat_rooms"
-  add_foreign_key "posts", "messages"
   add_foreign_key "posts", "users"
   add_foreign_key "products", "sizes"
   add_foreign_key "products", "types"

@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :chat_room
   belongs_to :user
-  has_many :messages
+  has_many :messages, dependent: :destroy
   validates :content, presence: true, allow_blank: false
   after_create :broadcast_message
 
