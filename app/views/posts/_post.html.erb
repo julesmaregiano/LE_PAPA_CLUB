@@ -1,5 +1,7 @@
-<%= link_to chat_room_post_path(post) do %>
-  <div class="post <%= user_is_posts_author ? "right" : "" %>">
-    <div class="post-content"><%= post.content %></div>
-  </div>
-<% end %>
+<div class="post">
+  <%= post.user.first_name %>
+  <%= post.user.created_at %>
+  <div class="post-content"><%= post.content %></div>
+
+  <%= link_to "Répondre", chat_room_post_path(post) %>
+</div>
