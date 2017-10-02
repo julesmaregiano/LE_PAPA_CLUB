@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="chat-header"><h4>#<%= @post.content %> dans le chat: <%= @post.chat_room.name %> </h4></div>
+    <div class="messages">
+      <% @post.messages.each do |message| %>
+        <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+      <% end %>
+    </div>
+    <div id="create-message">
+    <%= simple_form_for [ @post.chat_room, @post, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+      <%= f.input :content, label: false %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
+
+<% content_for :after_js do %>
+  <script>
+
+    $("#message_content").keypress(function(event) {
+        if (event.which == 13) {
+            event.preventDefault();
+            $("#new_message").submit();
+            setTimeout(function(){scrollLastMessageIntoView();}, 100);
+        }
+      });
+
+    scrollLastMessageIntoView();
+
+    App['post_<%= @post.id %>'] = App.cable.subscriptions.create(
+      { channel: 'PostsChannel', post_id: <%= @post.id %> },
+      {
+        received: (data) => {
+          if (data.current_user_id !== <%= current_user.id %>) {
+            const messagesContainer = document.querySelector('.messages');
+            messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+            scrollLastMessageIntoView();
+          }
+        }
+      })
+  </script>
+<% end %>

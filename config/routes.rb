@@ -4,17 +4,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :chat_rooms, only: [ :show, :index] do
     resources :posts, only: [:index, :show, :create, :new, :delete] do
-      resources :messages, only: [:create]
+      resources :messages, only: [:create, :new, :show]
       end
-
-    resources :messages, only: [:create] do
-      resources :answers, only: [:show, :create, :new, :delete]
     end
-  end
 
   resources :articles, only: [ :index, :show] do
     resources :comments, only: [:show, :create, :new, :delete]
-
   end
 
   resources :products, only: [ :index, :show]
