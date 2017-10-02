@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @message.post = @post
     @message.user = current_user
     if @message.save
