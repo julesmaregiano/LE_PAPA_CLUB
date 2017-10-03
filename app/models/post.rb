@@ -3,13 +3,13 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :messages, dependent: :destroy
   validates :content, presence: true, allow_blank: false
-  after_create :broadcast_message
+  after_create :broadcast_post
 
   def from?(some_user)
     user == some_user
   end
 
-  def broadcast_message
+  def broadcast_post
     ActionCable.server.broadcast("chat_room_#{chat_room.id}", {
       post_partial: ApplicationController.renderer.render(
         partial: "posts/post",
