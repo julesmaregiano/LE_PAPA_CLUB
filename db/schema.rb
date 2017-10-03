@@ -132,10 +132,7 @@ ActiveRecord::Schema.define(version: 20171001192853) do
   add_foreign_key "babies", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
-<<<<<<< HEAD
-=======
   add_foreign_key "messages", "posts"
->>>>>>> 319d9723b6ce9bf69d320b1d1af8a931f799db8b
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "chat_rooms"
   add_foreign_key "posts", "users"
