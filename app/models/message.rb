@@ -1,7 +1,5 @@
 class Message < ApplicationRecord
   belongs_to :post
-<<<<<<< HEAD
-=======
   belongs_to :user
   validates :content, presence: true, allow_blank: false
   after_create :broadcast_message
@@ -17,5 +15,4 @@ class Message < ApplicationRecord
     })
   end
 
->>>>>>> 319d9723b6ce9bf69d320b1d1af8a931f799db8b
 end
