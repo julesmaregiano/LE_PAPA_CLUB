@@ -11,14 +11,14 @@
 }
 
 .post {
-  display: flex;
+  // display: flex;
   margin-bottom: 10px;
-  &.right {
-    flex-direction: row-reverse;
-    .post-content {
-      background-color: #F2F9FC;
-    }
-  }
+  // &.right {
+  //   flex-direction: row-reverse;
+  //   .post-content {
+  //     background-color: #F2F9FC;
+  //   }
+  // }
 }
 .post-content {
   background-color: #F7F7F7;
