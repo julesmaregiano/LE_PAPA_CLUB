@@ -11,6 +11,6 @@ class BabiesController < ApplicationController
   private
 
   def baby_params
-    params.require(:baby).permit(:name, :weight, :date_of_birth)
+    params.require(:baby).permit(:name, :gender, :height, :weight, :date_of_birth)
   end
 end
