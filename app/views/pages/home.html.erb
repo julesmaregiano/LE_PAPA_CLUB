@@ -1,4 +1,16 @@
-<h1>Le Papa Club</h1>
-<%= link_to "Articles", articles_path %>
-<%= link_to "La télécommande", products_path %>
-<%= link_to "Chat entre Papas", chat_rooms_path %>
+<h1>Le Club des Darons</h1>
+<%= link_to articles_path do %>
+  <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+    <h1>Articles & Connaissances</h1>
+  </div>
+<% end %>
+<%= link_to chat_room_path(ChatRoom.second) do %>
+  <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+    <h1>Au coin des Darons</h1>
+  </div>
+<% end %>
+<%= link_to products_path do %>
+  <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+    <h1>La télécommande magique</h1>
+  </div>
+<% end %>
