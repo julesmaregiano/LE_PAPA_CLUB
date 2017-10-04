@@ -29,11 +29,11 @@ Category.create(name: "Education")
 Category.create(name: "Urgence")
 Category.create(name: "Pratique")
 Category.create(name: "Couple")
-puts "#{Category.all.size} catégories créés"
+puts "#{Category.all.size} catégories créées"
 
 users = [1, 2]
 category = [1, 2, 3, 4, 5]
-lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, beatae. Consequatur similique eveniet quasi accusamus neque iure beatae repellendus maxime, pariatur suscipit tempore quaerat ex iste esse labore eaque sit?"
+lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, beatae. Consequatur similique eveniet quasi accusamus neque iure beatae repellendus maxime, pariatur suscipit tempore quaerat ex iste esse labore eaque sit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi repellat aspernatur consectetur autem doloribus corporis sunt placeat odio, delectus, quo fugiat nulla deserunt, voluptas reiciendis rerum facilis perferendis modi at! "
 
 
 15.times do Article.create(title: Faker::Book.title, content: lorem, category: Category.all.sample, user: User.all.sample) end
@@ -43,7 +43,7 @@ ChatRoom.create(name: "Général")
 ChatRoom.create(name: "Santé")
 ChatRoom.create(name: "Urgence")
 ChatRoom.create(name: "Pratique")
-puts "#{ChatRoom.all.size} chatrooms créés"
+puts "#{ChatRoom.all.size} chatrooms créées"
 
 posts = [1, 2, 3, 4]
 chat_rooms = [1, 2, 3, 4]
@@ -54,3 +54,7 @@ puts "#{Post.all.size} posts créés"
 200.times do Message.create(content: Faker::HeyArnold.quote, post: Post.all.sample, user: User.all.sample) end
 puts "#{Message.all.size} messages créés"
 
+types_names = ["Couches", "Lait", "Bouffe", "Autre"]
+types_names.each do |type| Type.create(name: type) end
+20.times do Product.create(name: Faker::Commerce.product_name, type: Type.all.sample, price: rand(99)) end
+puts "#{Product.all.size} produits créés"
