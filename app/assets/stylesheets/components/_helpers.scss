@@ -1,0 +1,25 @@
+.flexbox {
+  display: flex;
+}
+.flex-horizontal {
+  display: flex;
+  justify-content: center;
+}
+.flex-left {
+  display: flex;
+  justify-content: left;
+}
+.flex-vertical {
+  display: flex;
+  align-items: center;
+}
+.fixed-top {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+}
+.flex-row {
+  flex-direction: row;
+  justify-content: left;
+}
