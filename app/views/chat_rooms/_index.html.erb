@@ -1,4 +1,4 @@
-<div class="flexbox">
+<div class="flexbox" style="justify-content: space-between;">
   <% @chat_rooms.each do |chat_room| %>
     <%= link_to chat_room_path(chat_room) do %>
       <div class="square-card flex-row" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">

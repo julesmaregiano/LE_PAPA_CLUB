@@ -1,0 +1,19 @@
+.home-card {
+  height: 33.333vh;
+  width: 100vh;
+  display: table-cell;
+  vertical-align: middle;
+  img {
+    width: 100%
+  }
+  h1 {
+    text-align : center;
+    &:hover {
+    // color black;
+    // font-size: 23px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #C93332;
+    }
+  }
+}
