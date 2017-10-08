@@ -10,9 +10,9 @@
             <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
           <% end %>
         </li>
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Articles", articles_path %></li>
+        <li><%= link_to "Chat des Darons", chat_room_path(ChatRoom.first) %></li>
+        <li><%= link_to "La télécommande", products_path %></li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
