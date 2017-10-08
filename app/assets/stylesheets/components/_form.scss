@@ -1,0 +1,73 @@
+.form-registration {
+  margin-top: 80px;
+  height: 100vh;
+  h2 {
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  p {
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+  label {
+    color: white;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  .help-block {
+    color: lightgrey;
+    font-style: italic;
+    font-size: 14px;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px;
+    color: gre;
+  }
+  .btn:hover {
+    background-color: $blue;
+    color: white;
+    border-color: $blue;
+  }
+  a {
+    color: white;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  a:hover {
+    color: $red;
+    // font-weight: bold;
+    text-decoration: none;
+  }
+  #user_photo {
+    font-style: italic;
+    font-size: 14px;
+    color: white;
+  }
+  .attachinary {
+    color: white;
+  }
+  span {
+    margin-bottom: none;
+  }
+}
+
+.attachinary-input {
+  display: none !important;
+}
+
+.attachinary_container{
+  margin-top: 20px;
+  ul{
+    padding-left:0px;
+    li{
+      position:relative;
+      display: inline-block;
+      a{
+        color: $blue;
+        font-weight: normal;
+      }
+    }
+  }
+}
