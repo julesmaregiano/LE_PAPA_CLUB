@@ -18,12 +18,12 @@
   <script>
 
     $("#message_content").keypress(function(event) {
-        if (event.which == 13) {
-            event.preventDefault();
-            $("#new_message").submit();
-            setTimeout(function(){scrollLastMessageIntoView();}, 100);
-        }
-      });
+      if (event.which == 13) {
+        event.preventDefault();
+        $("#new_message").submit();
+        setTimeout(function(){scrollLastMessageIntoView();}, 100);
+      }
+    });
 
     scrollLastMessageIntoView();
 

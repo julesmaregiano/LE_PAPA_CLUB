@@ -1,3 +1,9 @@
-<% @chat_rooms.each do |chat_room| %>
-  <%= link_to chat_room.name, chat_room_path(chat_room) %>
-<% end %>
+<div class="flexbox">
+  <% @chat_rooms.each do |chat_room| %>
+    <%= link_to chat_room_path(chat_room) do %>
+      <div class="square-card flex-row" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <h1><%= chat_room.name %></h1>
+      </div>
+    <% end %>
+  <% end %>
+</div>

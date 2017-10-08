@@ -1,0 +1,18 @@
+.index {
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel {
+  width: 100vh;
+}
+.square-card {
+  float: left;
+  height: 120px;
+  width: 120px;
+  display: inline;
+  margin: 5px;
+  border-radius: $border-radius-base
+  }
