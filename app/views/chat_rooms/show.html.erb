@@ -47,8 +47,11 @@
             event.preventDefault();
             $("#new_post").submit();
             setTimeout(function(){scrollLastPostIntoView();}, 100);
+            $('#CreatePostModal').modal('hide');
         }
       });
+
+
 
     scrollLastPostIntoView();
 
