@@ -1,0 +1,9 @@
+<h1>Liste des produits:</h1>
+
+<% @types.each do |type| %>
+  <%= link_to type_products_path(type) do %>
+  <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('http://img.mensjournal.com/article-leads-horizontal/gettyimages-672838343-d466d969-151d-4844-bb34-8597738a79d3.jpg') no-repeat center center; background-size: cover;">
+    <h1><%= type.name %></h1>
+  </div>
+  <% end %>
+<% end %>
