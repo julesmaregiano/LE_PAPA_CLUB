@@ -1,9 +1,7 @@
-
-  <!-- Dropdown list appearing on mobile only -->
-<% if user_signed_in? %>
-  <div class="navbar-item">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+<div class="navbar-item">
+   <div class="dropdown">
+     <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <% if user_signed_in? %>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <li>
           <%= link_to user_path(current_user) do %>
@@ -31,6 +29,15 @@
           <% end %>
         </li>
       </ul>
-    </div>
+      <% else %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <li>
+            <%= link_to t(".sign_in", default: "Login"), new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to t(".sign_in", default: "Rejoindre les Darons"), new_user_registration_path %>
+          </li>
+        </ul>
+      <% end %>
   </div>
-<% end %>
+</div>
