@@ -5,11 +5,11 @@
       <img class="avatar-large"src="https://www.fillmurray.com/200/200" alt="">
       <div>
         <div class="card-author">
-          <p><%= post.user.first_name %></p>
-          <p><%= post.user.babies.size %> morveux</p>
+          <h3><%= post.user.first_name %></h3>
+          <h5><%= post.user.babies.size %> morveux</h5>
         </div>
       </div>
-      <p>Il y a <%=((Time.now - post.created_at)).to_i / 60%> min</p>
+      <h5>Il y a <%=((Time.now - post.created_at)).to_i / 60%> min</h5>
     </div>
 
     <div class="post-content">

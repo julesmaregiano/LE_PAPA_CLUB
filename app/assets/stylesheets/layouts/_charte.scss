@@ -1,5 +1,4 @@
 body {
-background: #ffeddf;
 // background: linear-gradient(45deg, #000000, #434343);
 }
 
@@ -7,6 +6,7 @@ body, a {
   margin: 0;
 }
 
+// Gros titres
 h1 {
   font-size: 22px;
   color: white;
@@ -16,28 +16,31 @@ h1 {
 h2 {
   font-size: 19px;
   color: black;
-  margin: none;
+  margin: 0px;
 }
 
+// Noms des utilisateurs dans les chats
 h3 {
-  font-size: 18px;
+  font-size: 19px;
   font-family: $body-font;
-  margin: none;
+  margin: 0px;
 }
 
 h4 {
   font-size: 16px;
   font-family: $body-font;
-  margin: none;
+  margin: 0px;
 }
 
+// Infos complémentaires, sous-titres dans les chats
 h5 {
   font-size: 14px;
   font-family: $body-font;
-  margin: none;
+  margin: 0px;
 }
 
-p {
-  font-size: 19px;
-  margin: none;
+// Textes longs (chats, articles)
+a, p {
+  font-size: 16px;
+  margin: 0px;
 }
