@@ -6,6 +6,10 @@
   overflow: scroll;
 }
 
+.posts::-webkit-scrollbar {
+  display: none;
+}
+
 // Post complet
 .post {
   margin-bottom: 10px;

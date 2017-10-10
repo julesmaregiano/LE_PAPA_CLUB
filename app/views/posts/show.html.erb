@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="chat-header"><h4>#<%= @post.content %> dans le chat: <%= @post.chat_room.name %> </h4></div>
+
+    <%= render "posts/post", post: @post, user_is_posts_author: @post.user == current_user %>
+
     <div class="messages">
       <% @post.messages.each do |message| %>
         <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
@@ -11,6 +13,7 @@
       <%= f.input :content, label: false %>
       <%= f.button :submit %>
     <% end %>
+    </div>
   </div>
 </div>
 
@@ -33,7 +36,7 @@
         received: (data) => {
           if (data.current_user_id !== <%= current_user.id %>) {
             const messagesContainer = document.querySelector('.messages');
-            messagesContainer.insertAdjacentHTML('afterbegin', data.message_partial);
+            messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
             scrollLastMessageIntoView();
           }
         }

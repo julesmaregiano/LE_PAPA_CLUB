@@ -1,5 +1,17 @@
-
-
 <div class="message <%= user_is_messages_author ? "right" : "" %>">
-  <div class="message-content"><%= message.content %></div>
+
+  <div class="message-top">
+    <img class="avatar-large"src="https://www.fillmurray.com/200/200" alt="">
+    <div>
+      <div class="card-author">
+        <h3><%= message.user.first_name[0..12] %><%= message.user.first_name.size > 12 ? ".." : "" %> </h3>
+        <h5><%= message.user.babies.size %> morveux</h5>
+      </div>
+    </div>
+    <h5 id="timer">Il y a <%=((Time.now - message.created_at)).to_i / 60%> min</h5>
+  </div>
+
+  <div class="message-content">
+    <p><%= message.content %></p>
+  </div>
 </div>
