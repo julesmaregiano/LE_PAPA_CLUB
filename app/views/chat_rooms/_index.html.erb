@@ -1,8 +1,8 @@
 <div class="flexbox" style="justify-content: space-between;">
   <% @chat_rooms.each do |chat_room| %>
     <%= link_to chat_room_path(chat_room) do %>
-      <div class="square-card flex-row" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <h1><%= chat_room.name %></h1>
+      <div class="square-card flex-row" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/zanzibar/image/upload/v1507625860/Sante_small_uj3wn3.jpg');">
+        <h1 style="opacity: 0.8"><%= chat_room.name %></h1>
       </div>
     <% end %>
   <% end %>

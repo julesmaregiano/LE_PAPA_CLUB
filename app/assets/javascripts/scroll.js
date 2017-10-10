@@ -1,6 +1,6 @@
 function scrollLastPostIntoView() {
   const posts = document.querySelectorAll('.post');
-  const lastPost = posts[posts.length - 1];
+  const lastPost = posts[0];
 
   if (lastPost !== undefined) {
     lastPost.scrollIntoView();
