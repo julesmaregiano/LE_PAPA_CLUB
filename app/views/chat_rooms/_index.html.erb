@@ -1,4 +1,4 @@
-<div class="flexbox" style="justify-content: space-between;">
+<div class="flex-horizontal">
   <% @chat_rooms.each do |chat_room| %>
     <%= link_to chat_room_path(chat_room) do %>
       <div class="square-card flex-row" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/zanzibar/image/upload/v1507625860/Sante_small_uj3wn3.jpg');">

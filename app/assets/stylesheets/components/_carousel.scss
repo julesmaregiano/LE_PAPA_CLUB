@@ -3,6 +3,8 @@
   overflow-y: hidden;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  max-height: 25vh;
+  padding: 0px 0px 10px 0px;
 }
 
 .carousel {
@@ -10,8 +12,8 @@
 }
 .square-card {
   float: left;
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   display: inline;
   margin: 5px;
   border-radius: $border-radius-base

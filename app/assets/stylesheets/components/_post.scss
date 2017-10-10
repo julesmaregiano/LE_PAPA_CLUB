@@ -1,8 +1,8 @@
 // Background
 .posts {
-  padding: 20px;
+  padding: 10px;
   border-top: none;
-  max-height: calc(100vh - 70px - 45px - 61px - 30px);
+  max-height: 75vh;
   overflow: scroll;
 }
 
@@ -97,4 +97,11 @@ input.form-control {
     border: 1px solid blue;
     box-shadow: none;
   }
+}
+
+#show-modal {
+  position: absolute;
+  bottom: 0px;
+  margin: 2px 125px;
+  opacity: 0.8;
 }
