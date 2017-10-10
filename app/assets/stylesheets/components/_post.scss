@@ -15,17 +15,22 @@
   background-color: white;
   box-shadow: 0 1px 2px $gray;
   & h3 {
-    color: $blue;
-    font-weight: bold;
+    color: $purple;
     padding: 5px;
   }
-  & h5 {
+  & h5, i {
     color: $gray;
     padding: 5px;
+  }
+  & i {
+    font-size: 24px;
   }
   & p, a {
     color: $dark-gray;
     opacity: 0.8;
+  }
+  & img {
+    margin: 3px;
   }
   // &.right {
   //   flex-direction: row-reverse;
@@ -43,13 +48,18 @@
 .post-top {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: stretch;
+  position: relative;
 }
 
 .card-author {
   display: flex;
   flex-direction: column;
+}
+
+#timer {
+  position: absolute;
+  right: 5px;
 }
 
 // Contenu du post
@@ -64,6 +74,7 @@
 .post-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
 }
 
