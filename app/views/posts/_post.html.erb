@@ -1,5 +1,25 @@
 <%= link_to chat_room_post_path(post.chat_room, post) do %>
   <div class="post <%= user_is_posts_author ? "right" : "" %>">
-    <div class="post-content"><%= post.content %></div>
+
+    <div class="post-top">
+      <img class="avatar-large"src="https://www.fillmurray.com/200/200" alt="">
+      <div>
+        <div class="card-author">
+          <h3><%= post.user.first_name[0..12] %><%= post.user.first_name.size > 12 ? ".." : "" %> </h3>
+          <h5><%= post.user.babies.size %> morveux</h5>
+        </div>
+      </div>
+      <h5 id="timer">Il y a <%=((Time.now - post.created_at)).to_i / 60%> min</h5>
+    </div>
+
+    <div class="post-content">
+      <p><%= post.content %></p>
+    </div>
+
+    <div class="post-bottom">
+      <h5><%= post.messages.size %> messages</h5>
+      <i class="fa fa-comment"></i>
+    </div>
   </div>
+
 <% end %>

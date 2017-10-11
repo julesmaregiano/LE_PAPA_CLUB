@@ -1,40 +1,96 @@
+// Background
 .posts {
-  font-size: 14px;
-  color: #868686;
-  background-color: #ffffff;
-  padding: 20px;
-  border: 1px solid #ececec;
+  padding: 10px;
   border-top: none;
-  border-bottom-width: 0;
-  max-height: calc(100vh - 70px - 45px - 61px - 30px);
+  max-height: 75vh;
   overflow: scroll;
 }
 
+.posts::-webkit-scrollbar {
+  display: none;
+}
+
+// Post complet
 .post {
-  // display: flex;
   margin-bottom: 10px;
+  border-radius: $border-radius-base;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 1px 2px $gray;
+  & h3 {
+    color: $purple;
+    padding: 5px;
+  }
+  & h5, i {
+    color: $gray;
+    padding: 5px;
+  }
+  & i {
+    font-size: 24px;
+  }
+  & p, a {
+    color: $dark-gray;
+    opacity: 0.8;
+  }
+  & img {
+    margin: 3px;
+  }
   // &.right {
   //   flex-direction: row-reverse;
   //   .post-content {
-  //     background-color: #F2F9FC;
+  //      background-color: #F2F9FC;
+  //   }
+  //   .card-author {
+  //     background: $green;
+  //     border-radius: 0px 15px 15px 0px;
   //   }
   // }
 }
-.post-content {
-  background-color: #F7F7F7;
-  margin: 0 10px;
-  padding: 11px 10px 8px 10px;
+
+// Infos du haut du post
+.post-top {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
 }
+
+.card-author {
+  display: flex;
+  flex-direction: column;
+}
+
+#timer {
+  position: absolute;
+  right: 5px;
+}
+
+// Contenu du post
+.post-content {
+  text-decoration: none;
+  width: 100%;
+  padding: 10px;
+}
+
+// Bas du post
+
+.post-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+
+// Form input
 
 #create-post {
   padding: 10px;
-  background-color: #ffffff;
   margin-bottom: 20px;
   border: 1px solid #ececec;
 }
-.post_content {
-  margin-bottom: 0;
-}
+
 input.form-control {
   border: 1px solid #ECECEC;
   box-shadow: none;
@@ -46,12 +102,10 @@ input.form-control {
     box-shadow: none;
   }
 }
-.chat-header {
-  background-color: #4F2F4C;
-  color: white;
-  padding: 10px 20px;
-  margin-top: 10px;
-  h4 {
-    margin: 0;
-  }
+
+#show-modal {
+  position: absolute;
+  bottom: 0px;
+  margin: 2px 125px;
+  opacity: 0.8;
 }
