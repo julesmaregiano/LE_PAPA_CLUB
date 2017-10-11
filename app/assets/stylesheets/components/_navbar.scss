@@ -2,16 +2,22 @@
   position: relative;
   margin: 0px;
   max-height: 5vh;
+  justify-content: space-between;
+  align-items: center;
+  i, h2 {
+  }
 }
 .navbar-item {
-  cursor: pointer;
-  padding: 2px;
-  border-radius: $border-radius-base;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  z-index: 100;
-  color: white;
+  font-size: 25px;
+  color: $gray;
+  // cursor: pointer;
+  // padding: 2px;
+  // border-radius: $border-radius-base;
+  // position: absolute;
+  // top: 5px;
+  // right: 10px;
+  // z-index: 100;
+  // color: white;
 }
 
 .navbar-dropdown-menu {
