@@ -104,8 +104,15 @@ input.form-control {
 }
 
 #show-modal {
-  position: absolute;
-  bottom: 0px;
-  margin: 2px 125px;
+  position: fixed;
+  bottom: 7px;
   opacity: 0.8;
+  width: 30%;
+  left: 50%;
+  margin-left: -15%;
+}
+
+
+.like {
+
 }

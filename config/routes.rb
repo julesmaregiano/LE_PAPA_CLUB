@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :chat_rooms, only: [ :show, :index] do
     resources :posts, only: [:index, :show, :create, :new, :delete] do
+      member do
+        put :like, to: "posts#like"
+        put :unlike, to: "posts#unlike"
+      end
+
       resources :messages, only: [:create, :new, :show]
       end
     end
