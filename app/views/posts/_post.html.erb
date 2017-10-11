@@ -18,21 +18,20 @@
     </div>
 
     <div class="post-bottom">
-      <h5><%= post.messages.size %> messages</h5>
 
-      <% if current_user.liked? post %>
+      <% if current_user.liked? event %>
         <%= link_to unlike_chat_room_post_path(post.chat_room, post), method: :put do %>
           <i class="fa fa-thumbs-up" aria-hidden="true"></i> <!-- see filled heart -->
         <% end %>
-      <% elsif %>
+      <% else %>
         <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <!-- see empty heart -->
         <% end %>
       <% end %>
-
         <h5><%= pluralize post.get_likes.size, "like" %></h5>
 
       <i class="fa fa-comment"></i>
+      <h5><%= post.messages.size %> messages</h5>
     </div>
   </div>
 
