@@ -17,6 +17,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'faker'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'pry-byebug'

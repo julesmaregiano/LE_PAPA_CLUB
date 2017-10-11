@@ -18,6 +18,18 @@ class MessagesController < ApplicationController
     end
   end
 
+  def like
+    @message = Message.find(params[:id])
+    @message.liked_by current_user
+    redirect_to chat_room_post_path(@post)
+  end
+
+  def unlike
+    @message = Message.find(params[:id])
+    @message.downvote_from current_user
+    redirect_to chat_room_post_path(@post)
+  end
+
   private
 
   def message_params

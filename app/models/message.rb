@@ -1,4 +1,5 @@
 class Message < ApplicationRecord
+  acts_as_votable
   belongs_to :post
   belongs_to :user
   validates :content, presence: true, allow_blank: false

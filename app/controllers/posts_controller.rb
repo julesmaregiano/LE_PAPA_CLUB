@@ -26,6 +26,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def like
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+    @chat_room = ChatRoom.find(params[:chat_room_id])
+    redirect_to chat_room_path(@chat_room)
+  end
+
+  def unlike
+    @post = Post.find(params[:id])
+    @post.unliked_by current_user
+    @chat_room = ChatRoom.find(params[:chat_room_id])
+    redirect_to chat_room_path(@chat_room)
+  end
+
   private
 
   def post_params
