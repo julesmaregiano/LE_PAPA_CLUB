@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  cattr_accessor :current_user
 
   def index
     @posts = Post.all
@@ -28,7 +27,6 @@ class PostsController < ApplicationController
   end
 
   def like
-    @post =
     @post = Post.find(params[:id])
     @post.liked_by current_user
     @chat_room = ChatRoom.find(params[:chat_room_id])
