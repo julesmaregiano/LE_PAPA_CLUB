@@ -1,9 +1,11 @@
 class Post < ApplicationRecord
-  belongs_to :chat_room
-  belongs_to :user
-  has_many :messages, dependent: :destroy
+  acts_as_votable
   validates :content, presence: true, allow_blank: false
   after_create :broadcast_post
+  has_many :likes
+  has_many :messages
+  belongs_to :user
+  belongs_to :chat_room
 
   def from?(some_user)
     user == some_user
