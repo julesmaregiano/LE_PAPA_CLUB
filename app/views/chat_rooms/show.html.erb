@@ -29,6 +29,7 @@
         <div id="create-post">
           <%= simple_form_for [ @chat_room, Post.new ], remote: true, html: {autocomplete: "off" } do |f| %>
             <%= f.input :content, label: false, input_html: { autofocus: "true" }%>
+            <%= f.input :photo, as: :attachinary %>
         </div>
       </div>
       <div class="modal-footer">

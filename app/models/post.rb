@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   has_many :messages
   belongs_to :user
   belongs_to :chat_room
+  has_attachment :photo
 
   def from?(some_user)
     user == some_user
