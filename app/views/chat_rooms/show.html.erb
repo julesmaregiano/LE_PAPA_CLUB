@@ -13,7 +13,7 @@
 
 <!-- Button trigger modal -->
 <div class="bottom-navbar">
-  <button type="button" id="show-modal" class="cute-button text-center" data-toggle="modal" data-target="#CreatePostModal">
+  <button type="button" id="show-modal" class="cute-button-purple text-center" data-toggle="modal" data-target="#CreatePostModal">
     Demander
   </button>
 </div>
@@ -28,9 +28,7 @@
         <div id="create-post">
           <%= simple_form_for [ @chat_room, Post.new ], remote: true, html: {autocomplete: "off" } do |f| %>
             <%= f.input :content, placeholder: "Lâchez-vous", label: false%>
-            <%= f.input :photo, label: false, as: :attachinary do %>
-              <i class="fa fa-camera-retro fa-2x"></i>
-            <% end %>
+            <%= f.input :photo, as: :attachinary %>
         </div>
       </div>
       <div class="modal-footer">
