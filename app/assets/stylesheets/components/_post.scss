@@ -10,34 +10,6 @@
   display: none;
 }
 
-// Post complet
-.card-design {
-  margin-bottom: 10px;
-  border-radius: $border-radius-base;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  box-shadow: 0 1px 2px $gray;
-  & h3 {
-    color: $purple;
-    padding: 5px;
-  }
-  & h5, i {
-    color: $gray;
-    padding: 5px;
-  }
-  & i {
-    font-size: 24px;
-  }
-  & p, a {
-    color: $dark-gray;
-    opacity: 0.8;
-  }
-  & img {
-    margin: 3px;
-  }
-}
-
 // Infos du haut du post
 .post-top {
   display: flex;
