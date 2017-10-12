@@ -1,8 +1,7 @@
 <div class="message <%= user_is_messages_author ? "right" : "" %>">
 
   <div class="message-top">
-    <% avatar_url = message.user.facebook_picture_url || "https://www.fillmurray.com/200/200" %>
-    <img class="avatar-large" src=<%= avatar_url %> alt="">
+      <%= render "shared/avatar", post: message %>
     <div>
       <div class="card-author">
         <h3><%= message.user.first_name[0..12] %><%= message.user.first_name.size > 12 ? ".." : "" %> </h3>

@@ -2,8 +2,7 @@
   <div class="post <%= user_is_posts_author ? "right" : "" %>">
 
     <div class="post-top">
-      <% avatar_url = post.user.facebook_picture_url || "https://www.fillmurray.com/200/200" %>
-      <img class="avatar-large" src=<%= avatar_url %> alt="">
+      <%= render "shared/avatar", post: post %>
       <div>
         <div class="card-author">
           <h3><%= post.user.first_name[0..12] %><%= post.user.first_name.size > 12 ? ".." : "" %> </h3>
@@ -15,19 +14,16 @@
 
     <div class="post-content">
       <p><%= post.content %></p>
+      <% if post.photo? %>
+        <%= cl_image_tag post.photo.path, width: 300, height: 300, crop: :fill %>
+      <% end %>
     </div>
 
     <div class="post-bottom">
 
-      <% if current_user.liked? post %>
-        <%= link_to unlike_chat_room_post_path(post.chat_room, post), method: :put do %>
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i> <!-- see filled heart -->
-        <% end %>
-      <% else %>
         <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <!-- see empty heart -->
         <% end %>
-      <% end %>
 
       <h5><%= pluralize post.get_likes.size, "like" %></h5>
 

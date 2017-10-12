@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :babies, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :posts, dependent: :destroy
-  has_many :answers, dependent: :destroy
   has_attachment :profile_pic
 
   def self.find_for_facebook_oauth(auth)
