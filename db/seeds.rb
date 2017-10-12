@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destruction de la DB"
-User.destroy_all
 Baby.destroy_all
 Article.destroy_all
 Category.destroy_all
 Message.destroy_all
 Post.destroy_all
 ChatRoom.destroy_all
+User.destroy_all
 # Products.destroy_all
 
 User.create(email: "jules@lepapa.club", first_name: "Jules", last_name: "Maregiano", date_of_birth: "26/07/1988", couple_situation: 1, role: 1, password: "123soleil")
@@ -41,10 +41,11 @@ lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, beatae. 
 15.times do Article.create(title: Faker::Book.title, content: lorem, category: Category.all.sample, user: User.all.sample) end
 puts "#{Article.all.size} articles créés"
 
-ChatRoom.create(name: "Général")
-ChatRoom.create(name: "Santé")
-ChatRoom.create(name: "Urgence")
-ChatRoom.create(name: "Pratique")
+ChatRoom.create(name: "Général", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507625860/DeGaulle_small_ogly9a.jpg")
+ChatRoom.create(name: "Santé", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507625860/Sante_small_uj3wn3.jpg")
+ChatRoom.create(name: "Urgence", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507795856/rsz_danger_hetxjb.jpg")
+ChatRoom.create(name: "Pratique", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/c_fill,h_200,w_200/v1507796140/PereFils_vzuktm.jpg" )
+ChatRoom.create(name: "Couple", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507796023/rsz_couple_u4kncv.jpg" )
 puts "#{ChatRoom.all.size} chatrooms créées"
 
 posts = [1, 2, 3, 4]
