@@ -3,22 +3,25 @@
   overflow-y: hidden;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  max-height: 25vh;
+  height: 25vh;
   padding: 0px 0px 10px 0px;
+  overflow: auto;
 }
 
 .carousel {
-  width: 100vh;
+  top: 45px;
 }
 .square-card {
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
   float: left;
   height: 100px;
   width: 100px;
-  display: inline;
   margin: 5px;
   border-radius: $border-radius-base;
   & h1 {
     color: $purple;
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 1px 1px 1px #272822;
   }
 }

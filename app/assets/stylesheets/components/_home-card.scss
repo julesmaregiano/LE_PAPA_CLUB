@@ -9,12 +9,12 @@
   }
   h1 {
     text-align : center;
+    color: $purple;
+    text-shadow: 1px 1px 1px #272822;
     &:hover {
-    // color black;
-    // font-size: 23px;
     font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: #C93332;
+    color: white;
+    text-decoration: none !important;
     }
   }
 }
