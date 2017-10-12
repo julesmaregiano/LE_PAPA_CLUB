@@ -36,16 +36,6 @@
   & img {
     margin: 3px;
   }
-  // &.right {
-  //   flex-direction: row-reverse;
-  //   .post-content {
-  //      background-color: #F2F9FC;
-  //   }
-  //   .card-author {
-  //     background: $green;
-  //     border-radius: 0px 15px 15px 0px;
-  //   }
-  // }
 }
 
 // Infos du haut du post
@@ -73,6 +63,12 @@
   padding: 10px;
 }
 
+#post_content {
+  padding: 0px;
+  height: 30px;
+  width: 300px;
+}
+
 // Bas du post
 
 .post-bottom {
@@ -81,37 +77,36 @@
   padding: 10px;
 }
 
-
 // Form input
 
 #create-post {
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ececec;
+  border: none;
 }
 
-input.form-control {
-  border: 1px solid #ECECEC;
-  box-shadow: none;
-  font-size: 14px;
-  color: #868686;
-  &:focus {
-    outline: none;
-    border: 1px solid blue;
-    box-shadow: none;
+.post_photo {
+  color: $purple;
+  flex-grow: 0;
+}
+
+#new_post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#post-left {
+  flex-grow: 1;
+}
+
+.cute-button {
+  border: none;
+  opacity: 0.8;
+  &:hover {
+    background-color: $purple;
+    color: white;
+    font-style: bold;
   }
 }
 
-#show-modal {
-  position: fixed;
-  bottom: 7px;
-  opacity: 0.8;
-  width: 30%;
-  left: 50%;
-  margin-left: -15%;
-}
-
-
-.like {
-
-}
