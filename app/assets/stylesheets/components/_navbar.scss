@@ -1,11 +1,12 @@
 .navbar {
-  position: absolute;
+  position: fixed;
   background: transparent;
-  color: white;
+  color: $purple;
   padding: 0px;
   margin: 0px;
   max-height: 5vh;
   width: 100%;
+  z-index: 100;
 }
 
 .navbar-item {
@@ -16,7 +17,7 @@
   top: 5px;
   right: 10px;
   z-index: 100;
-  color: white;
+  color: $purple;
 }
 
 .back-btn {
@@ -27,13 +28,14 @@
   top: 10px;
   left: 10px;
   z-index: 100;
-  color: white;
+  color: $purple;
 }
 
 .navbar-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  z-index: 100;
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
