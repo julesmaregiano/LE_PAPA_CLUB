@@ -1,8 +1,6 @@
-
 <div class="index">
   <%= render "index" %>
 </div>
-
 
 <div class="posts">
   <% @posts.each do |post| %>
@@ -10,10 +8,9 @@
   <% end %>
 </div>
 
-
 <!-- Button trigger modal -->
 <div class="bottom-navbar">
-  <button type="button" id="show-modal" class="btn btn-primary btn-lg text-center" data-toggle="modal" data-target="#CreatePostModal">
+  <button type="button" id="show-modal" class="cute-button-purple text-center" data-toggle="modal" data-target="#CreatePostModal">
     Demander
   </button>
 </div>
@@ -22,18 +19,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModale"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Lâchez-vous</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModale"></button>
       </div>
       <div class="modal-body">
         <div id="create-post">
           <%= simple_form_for [ @chat_room, Post.new ], remote: true, html: {autocomplete: "off" } do |f| %>
-            <%= f.input :content, label: false, input_html: { autofocus: "true" }%>
+            <%= f.input :content, placeholder: "Lâchez-vous", label: false%>
             <%= f.input :photo, as: :attachinary %>
         </div>
       </div>
       <div class="modal-footer">
-        <%= f.button :submit %>
+          <%= f.button :submit , class: 'cute-button'%>
         <% end %>
       </div>
     </div>

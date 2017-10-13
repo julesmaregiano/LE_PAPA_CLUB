@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    my_posts = @user.posts
+    liked_posts = @user.find_up_voted_items
+    @posts = (my_posts + liked_posts).sort_by(&:created_at)
   end
 
   def edit

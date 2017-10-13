@@ -1,10 +1,12 @@
-<h1>Vous</h1>
-<%= simple_form_for @user do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :date_of_birth %>
-  <%= f.input :profile_pic, as: :attachinary %>
-  <%= f.submit %>
-<% end %>
-<h1>Votre mioche</h1>
-<%= render "babies/edit" %>
+<div class="container carousel">
+  <h1>Vous</h1>
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :profile_pic, as: :attachinary %>
+    <%= f.submit %>
+  <% end %>
+  <h1>Votre mioche</h1>
+  <%= render "babies/edit" %>
+</div>

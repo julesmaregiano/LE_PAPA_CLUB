@@ -8,13 +8,16 @@
 
 puts "Destruction de la DB"
 Baby.destroy_all
+Comment.destroy_all
 Article.destroy_all
 Category.destroy_all
 Message.destroy_all
 Post.destroy_all
 ChatRoom.destroy_all
 User.destroy_all
-# Products.destroy_all
+Product.destroy_all
+Type.destroy_all
+
 
 User.create(email: "jules@lepapa.club", first_name: "Jules", last_name: "Maregiano", date_of_birth: "26/07/1988", couple_situation: 1, role: 1, password: "123soleil")
 User.create(email: "lea@lepapa.club", first_name: "Léa", last_name: "Durand", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
@@ -57,7 +60,70 @@ puts "#{Post.all.size} posts créés"
 200.times do Message.create(content: Faker::HeyArnold.quote, post: Post.all.sample, user: User.all.sample) end
 puts "#{Message.all.size} messages créés"
 
-types_names = ["Couches", "Lait", "Bouffe", "Autre"]
-types_names.each do |type| Type.create(name: type) end
-20.times do Product.create(name: Faker::Commerce.product_name, type: Type.all.sample, price: rand(99)) end
+Type.create(name: "Couches", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/c_fill,g_north,h_320,w_527/v1507880876/Diapers_caz57d.jpg")
+Type.create(name: "Lait en poudre", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507880876/ScarfaceLaitPoudre_bgtz4o.jpg")
+Type.create(name: "Nourriture", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507880876/Nourriture_yp5vqu.jpg")
+puts "#{Type.all.size} types créés"
+
+# De 2 à 3 mois
+Size.create(name: "Taille 1 (2-5kg)")
+# De 0 à 4 mois
+Size.create(name: "Taille 2 (3-6kg)")
+# De 3 à 10 mois
+Size.create(name: "Taille 3 (4-9kg)")
+# De 6 à 36 mois
+Size.create(name: "Taille 4 (7-18kg)")
+# Après 10 mois
+Size.create(name: "Taille 4+ (10-20kg)")
+# Après 18 mois
+Size.create(name: "Taille 5 (12-25kg)")
+
+Product.create(name: "Pampers - New Baby - Couches Taille 1 ( 2-5 kg) - Pack Géant (x88 couches)",
+               type: Type.first,
+               description: "Pampers - New Baby - Couches Taille 1 ( 2-5 kg) - Pack Géant (x88 couches)",
+               subtitle: "Idéal pour faire un gros caca.",
+               size_id: 1,
+               link: "https://www.amazon.fr/Pampers-Couches-Taille-Géant-couches/dp/B01D0497IS/",
+               image_small_url: "https://images-eu.ssl-images-amazon.com/images/I/51ewT6pAkCL._AC_US240_QL65_.jpg",
+               price: 12.30)
+Product.create(name: "Love & Green - Couches Bébé Hypoallergéniques 0% - Taille 2 (3-6 kg) - Lot de 2 x 36 couches (72 couches) ",
+               type: Type.first,
+               description: "Love & Green - Couches Bébé Hypoallergéniques 0% - Taille 2 (3-6 kg) - Lot de 2 x 36 couches (72 couches) ",
+               subtitle: "Idéal pour faire un gros caca.",
+               size_id: 2,
+               link: "https://www.amazon.fr/Love-Green-Couches-Hypoallergéniques-couches/dp/B00HN5051O/",
+               image_small_url: "https://images-eu.ssl-images-amazon.com/images/I/51IBTkP13VL._AC_US240_QL65_.jpg",
+               price: 21.50)
+Product.create(name: "Pampers - Premium Protection - Couches Taille 3 (5-9 kg) - Mega Pack 99 Couches",
+               type: Type.first,
+               description: "Pampers - Premium Protection - Couches Taille 3 (5-9 kg) - Mega Pack 99 Couches",
+               subtitle: "Idéal pour faire un gros caca.",
+               size_id: 3,
+               link: "https://www.amazon.fr/Pampers-Premium-Protection-Couches-Taille/dp/B071HY2TM7/",
+               image_small_url: "https://images-eu.ssl-images-amazon.com/images/I/51cnCantErL._AC_US327_QL65_.jpg",
+               price: 35.98)
+Product.create(name: "Pampers - Premium Protection - Pack 1 mois (x168 couches)",
+               type: Type.first,
+               description: "Pampers - Premium Protection - Couches Taille 4 (8-16 kg) - Pack 1 mois (x168 couches)",
+               subtitle: "Idéal pour faire un gros caca.",
+               size_id: 4,
+               link: "https://www.amazon.fr/Pampers-Sleep-Couches-Taille-couches/dp/B01MU7X1TJ/",
+               image_small_url: "https://images-eu.ssl-images-amazon.com/images/I/51mE3fctXhL._AC_US240_QL65_.jpg",
+               price: 16.15)
+Product.create(name: "Pampers - Baby Dry - Pack 1 mois (x152 couches)",
+               type: Type.first,
+               description: "Pampers - Baby Dry - Couches Taille 4+ (9-18 kg) - Pack 1 mois (x152 couches)",
+               subtitle: "Idéal pour faire un gros caca.",
+               size_id: 5,
+               link: "https://www.amazon.fr/Pampers-Baby-Couches-Taille-couches/dp/B00AR9HX8G/",
+               image_small_url: "https://images-eu.ssl-images-amazon.com/images/I/51gvT7VzpXL._AC_US240_QL65_.jpg",
+               price: 45.09)
+Product.create(name: "Love & Green - Pack de 18 Culottes Hypoallergéniques - Lot de 2",
+               type: Type.first,
+               description: "Love & Green - Pack de 18 Culottes Hypoallergéniques - Taille 5 (12-25 kg) - Lot de 2",
+               subtitle: "Idéal pour faire un gros caca.",
+               size_id: 6,
+               link: "https://www.amazon.fr/Love-Green-Culottes-Hypoallerg%C3%A9niques-Taille/dp/B015N3KFGW/",
+               image_small_url: "https://images-eu.ssl-images-amazon.com/images/I/51Tmm2eRrlL._AC_US240_QL65_.jpg",
+               price: 21.50)
 puts "#{Product.all.size} produits créés"

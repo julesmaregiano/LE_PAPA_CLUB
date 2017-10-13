@@ -1,5 +1,18 @@
-<h1>Liste des produits:</h1>
+<div class="container carousel">
+  <% @products.each do |product| %>
+    <%= link_to product.link, target: :_blank do %>
+      <div class="card-design">
+        <div class="article-top">
+          <h3><%= product.name %></h3>
+        </div>
+        <div class="article-preview">
+          <% if product.image_small_url? %>
+            <%= image_tag product.image_small_url, class: 'product-image' %>
+          <% end %>
+          <h5><%= product.subtitle %></h5>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
-<% @products.each do |products| %>
-  <%= link_to products.name, products_path(products) %>
-<% end %>
