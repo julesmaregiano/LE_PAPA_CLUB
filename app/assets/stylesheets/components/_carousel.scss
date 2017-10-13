@@ -4,7 +4,7 @@
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   height: 25vh;
-  padding: 0px 0px 10px 0px;
+  padding: 0px 0px 2px 0px;
   overflow: auto;
 }
 
@@ -18,10 +18,14 @@
   float: left;
   height: 100px;
   width: 100px;
-  margin: 5px;
+  margin: 1px;
   border-radius: $border-radius-base;
+  position: relative;
   & h1 {
     color: $purple;
-    text-shadow: 1px 1px 1px #272822;
+    text-shadow: 1px 1px 1px white;
+    position: absolute;
+    bottom : 1px;
+    padding-left: 2px;
   }
 }

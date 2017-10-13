@@ -1,3 +1,17 @@
-<% @articles.each do |article| %>
-  <%= link_to article.title, article_path(article) %>
-<% end %>
+<div class="container carousel">
+  <% @articles.each do |article| %>
+    <%= link_to article_path(article) do %>
+      <div class="card-design">
+        <div class="article-top">
+          <h3><%= article.title %></h3>
+        </div>
+        <div class="article-preview">
+          <% if article.photo? %>
+            <%= cl_image_tag article.photo.path, crop: :fill, style: 'width: 100%; margin: 0px;' %>
+          <% end %>
+          <h5><%= article.content.first(100) + ".." %></h5>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

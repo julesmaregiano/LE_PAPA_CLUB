@@ -1,6 +1,17 @@
-<%= @article.title %>
-<%= @article.content %>
+<div id="article" class="card-design carousel">
+  <h1><%= @article.title %></h1>
+  <h5>Ecrit par <%= @article.user.first_name %> <%= @article.user.last_name %></h5>
+    <% if @article.photo? %>
+      <%= cl_image_tag @article.photo.path, crop: :fill, style: 'width: 100%; margin: 0px;' %>
+    <% end %>
+  <p><%= @article.content %></p>
+</div>
 
-<% @article.comments.each do |comment| %>
-  <%= comment.content %>
-<% end %>
+<div id="article comments" class="carousel card-design">
+  <h2>Commentaires</h2>
+  <div class="container">
+    <% @comments.last(5).each do |comment| %>
+      <%= render "messages/message", message: comment, user_is_messages_author: comment.user == current_user %>
+    <% end %>
+  </div>
+</div>
