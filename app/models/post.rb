@@ -2,8 +2,7 @@ class Post < ApplicationRecord
   acts_as_votable
   validates :content, presence: true, allow_blank: false
   after_create :broadcast_post
-  has_many :likes
-  has_many :messages
+  has_many :messages, dependent: :destroy
   belongs_to :user
   belongs_to :chat_room
   has_attachment :photo
