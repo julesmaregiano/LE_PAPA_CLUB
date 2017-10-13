@@ -21,9 +21,21 @@
 
     <div class="post-bottom">
 
-        <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
+<!--         <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <!-- see empty heart -->
+        <% end %> -->
+
+
+      <% if current_user.liked? post %>
+        <%= link_to unlike_chat_room_post_path(post.chat_room, post), method: :put do %>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i> <!-- see filled heart -->
         <% end %>
+      <% elsif %>
+         <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
+           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <!-- see empty heart -->
+         <% end %>
+       <% end %>
+
 
       <h5><%= pluralize post.get_likes.size, "like" %></h5>
 
