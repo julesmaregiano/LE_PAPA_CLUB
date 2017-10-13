@@ -7,10 +7,15 @@
   max-height: 5vh;
   width: 100%;
   z-index: 100;
-  & i {
+  & i, h3 {
     color: $purple;
     text-shadow: 2px 2px 1px $yellow;
   }
+}
+
+.title {
+  color: $purple;
+  text-shadow: $yellow;
 }
 
 .navbar-item {
