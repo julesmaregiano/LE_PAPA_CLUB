@@ -21,9 +21,7 @@
   margin: 1px;
   border-radius: $border-radius-base;
   position: relative;
-  & h1 {
-    color: $purple;
-    text-shadow: 2px 2px 1px white;
+  & h2 {
     position: absolute;
     bottom : 1px;
     padding-left: 2px;

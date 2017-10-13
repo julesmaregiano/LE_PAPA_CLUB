@@ -6,10 +6,6 @@
   overflow: scroll;
 }
 
-.posts::-webkit-scrollbar {
-  display: none;
-}
-
 // Infos du haut du post
 .post-top {
   display: flex;
@@ -36,24 +32,15 @@
 }
 
 // Form input
-
 #create-post {
   padding: 10px;
   border: none;
-}
-
-.post_photo {
-  flex-grow: 0;
 }
 
 #new_post {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-#post-left {
-  flex-grow: 1;
 }
 
 .cute-button {
