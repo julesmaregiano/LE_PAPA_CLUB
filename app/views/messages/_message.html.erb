@@ -14,4 +14,19 @@
   <div class="message-content">
     <p><%= message.content %></p>
   </div>
+
+  <div class="message-bottom">
+
+    <% if current_user.liked? message %>
+      <%= link_to unlike_chat_room_post_message_path(message.post.chat_room, message.post, message), method: :put do %>
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i> <!-- see filled heart -->
+      <% end %>
+    <% elsif %>
+       <%= link_to like_chat_room_post_message_path(message.post.chat_room, message.post, message), method: :put do %>
+         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <!-- see empty heart -->
+       <% end %>
+     <% end %>
+
+    <h5><%= pluralize message.get_likes.size, "like" %></h5>
+  </div>
 </div>

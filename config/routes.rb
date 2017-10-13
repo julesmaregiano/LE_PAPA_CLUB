@@ -12,9 +12,14 @@ Rails.application.routes.draw do
         put :unlike, to: "posts#unlike"
       end
 
-      resources :messages, only: [:create, :new, :show]
+      resources :messages, only: [:create, :new, :show] do
+        member do
+          put :like, to: "messages#like"
+          put :unlike, to: "messages#unlike"
+        end
       end
     end
+  end
 
   resources :articles, only: [ :index, :show] do
     resources :comments, only: [:show, :create, :new, :delete]
