@@ -65,5 +65,53 @@ Type.create(name: "Lait en poudre", photo_url: "http://res.cloudinary.com/zanzib
 Type.create(name: "Nourriture", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507880876/Nourriture_yp5vqu.jpg")
 puts "#{Type.all.size} types créés"
 
-20.times do Product.create(name: Faker::Commerce.product_name, type: Type.all.sample, price: rand(99)) end
+# De 2 à 3 mois
+Size.create(name: "Taille 1 (2-5kg)")
+# De 0 à 4 mois
+Size.create(name: "Taille 2 (3-6kg)")
+# De 3 à 10 mois
+Size.create(name: "Taille 3 (4-9kg)")
+# De 6 à 36 mois
+Size.create(name: "Taille 4 (7-18kg)")
+# Après 10 mois
+Size.create(name: "Taille 4+ (10-20kg)")
+# Après 18 mois
+Size.create(name: "Taille 5 (12-25kg)")
+
+Product.create(name: "Pampers - New Baby - Couches Taille 1 ( 2-5 kg) - Pack Géant (x88 couches)",
+               type: Type.first,
+               description: "Pampers - New Baby - Couches Taille 1 ( 2-5 kg) - Pack Géant (x88 couches)",
+               size_id: 1,
+               link: "https://www.amazon.fr/Pampers-Couches-Taille-Géant-couches/dp/B01D0497IS/",
+               price: 12.30)
+Product.create(name: "Love & Green - Couches Bébé Hypoallergéniques 0% - Taille 2 (3-6 kg) - Lot de 2 x 36 couches (72 couches) ",
+               type: Type.first,
+               description: "Love & Green - Couches Bébé Hypoallergéniques 0% - Taille 2 (3-6 kg) - Lot de 2 x 36 couches (72 couches) ",
+               size_id: 2,
+               link: "https://www.amazon.fr/Love-Green-Couches-Hypoallergéniques-couches/dp/B00HN5051O/",
+               price: 21.50)
+Product.create(name: "Pampers - Premium Protection - Couches Taille 3 (5-9 kg) - Mega Pack 99 Couches",
+               type: Type.first,
+               description: "Pampers - Premium Protection - Couches Taille 3 (5-9 kg) - Mega Pack 99 Couches",
+               size_id: 3,
+               link: "https://www.amazon.fr/Pampers-Premium-Protection-Couches-Taille/dp/B071HY2TM7/",
+               price: 35.98)
+Product.create(name: "Pampers - Premium Protection - Pack 1 mois (x168 couches)",
+               type: Type.first,
+               description: "Pampers - Premium Protection - Couches Taille 4 (8-16 kg) - Pack 1 mois (x168 couches)",
+               size_id: 4,
+               link: "https://www.amazon.fr/Pampers-Sleep-Couches-Taille-couches/dp/B01MU7X1TJ/",
+               price: 16.15)
+Product.create(name: "Pampers - Baby Dry - Pack 1 mois (x152 couches)",
+               type: Type.first,
+               description: "Pampers - Baby Dry - Couches Taille 4+ (9-18 kg) - Pack 1 mois (x152 couches)",
+               size_id: 5,
+               link: "https://www.amazon.fr/Pampers-Baby-Couches-Taille-couches/dp/B00AR9HX8G/",
+               price: 45.09)
+Product.create(name: "Love & Green - Pack de 18 Culottes Hypoallergéniques - Lot de 2",
+               type: Type.first,
+               description: "Love & Green - Pack de 18 Culottes Hypoallergéniques - Taille 5 (12-25 kg) - Lot de ",
+               size_id: 6,
+               link: "https://www.amazon.fr/Love-Green-Culottes-Hypoallerg%C3%A9niques-Taille/dp/B015N3KFGW/",
+               price: 21.50)
 puts "#{Product.all.size} produits créés"
