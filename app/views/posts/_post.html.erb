@@ -5,30 +5,24 @@
       <%= render "shared/avatar", post: post %>
       <div>
         <div class="card-author">
-          <h3><%= post.user.first_name[0..12] %><%= post.user.first_name.size > 12 ? ".." : "" %> </h3>
+          <h1><%= post.user.first_name[0..12] %><%= post.user.first_name.size > 12 ? ".." : "" %> </h1>
           <h5><%= post.user.babies.size %> morveux</h5>
         </div>
       </div>
       <h5 id="timer">Il y a <%=((Time.now - post.created_at)).to_i / 60%> min</h5>
     </div>
 
-    <div class="post-content">
-      <p><%= post.content %></p>
+    <div class="post-content card-content">
       <% if post.photo? %>
         <%= cl_image_tag post.photo.path, width: 300, height: 300, crop: :fill %>
       <% end %>
+      <p><%= post.content %></p>
     </div>
 
     <div class="post-bottom">
-
-        <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
-          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <!-- see empty heart -->
-        <% end %>
-
-      <h5><%= pluralize post.get_likes.size, "like" %></h5>
-
-      <i class="fa fa-comment"></i>
       <h5><%= post.messages.size %> messages</h5>
+      <h5><%= pluralize post.get_likes.size, "like" %></h5>
+      <i class="fa fa-comment-o"></i>
     </div>
   </div>
 

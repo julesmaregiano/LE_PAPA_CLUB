@@ -18,22 +18,7 @@
   position: relative;
 }
 
-.card-author {
-  display: flex;
-  flex-direction: column;
-}
-
-#timer {
-  position: absolute;
-  right: 5px;
-}
-
 // Contenu du post
-.post-content {
-  text-decoration: none;
-  width: 100%;
-  padding: 10px;
-}
 
 #post_content {
   padding: 0px;
@@ -46,6 +31,7 @@
 .post-bottom {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
 }
 
@@ -57,7 +43,6 @@
 }
 
 .post_photo {
-  color: $purple;
   flex-grow: 0;
 }
 

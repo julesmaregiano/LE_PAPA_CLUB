@@ -3,7 +3,7 @@
     <%= link_to chat_room_path(chat_room) do %>
       <div class="square-card flex-row"
            style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)), url('<%= cl_image_path chat_room.photo.path, height: 100, width: 100, crop: :fill %>')">
-        <h1><%= chat_room.name %></h1>
+        <h2><%= chat_room.name %></h2>
       </div>
     <% end %>
   <% end %>
