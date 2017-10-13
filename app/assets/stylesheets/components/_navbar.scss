@@ -7,6 +7,10 @@
   max-height: 5vh;
   width: 100%;
   z-index: 100;
+  & i {
+    color: $purple;
+    text-shadow: 2px 2px 1px $yellow;
+  }
 }
 
 .navbar-item {
@@ -36,11 +40,12 @@
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
   z-index: 100;
+  opacity: 0.8;
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: $dark-gray !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;

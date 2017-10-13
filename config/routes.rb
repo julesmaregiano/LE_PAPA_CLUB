@@ -20,7 +20,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:show, :create, :new, :delete]
   end
 
-  resources :products, only: [ :index, :show]
+  resources :types, only: [ :index ] do
+    resources :products, only: [ :index, :show]
+  end
+
   resources :users, only: [ :show, :edit, :update] do
     resources :babies, only: [:edit, :update]
   end

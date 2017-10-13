@@ -8,13 +8,16 @@
 
 puts "Destruction de la DB"
 Baby.destroy_all
+Comment.destroy_all
 Article.destroy_all
 Category.destroy_all
 Message.destroy_all
 Post.destroy_all
 ChatRoom.destroy_all
 User.destroy_all
-# Products.destroy_all
+Product.destroy_all
+Type.destroy_all
+
 
 User.create(email: "jules@lepapa.club", first_name: "Jules", last_name: "Maregiano", date_of_birth: "26/07/1988", couple_situation: 1, role: 1, password: "123soleil")
 User.create(email: "lea@lepapa.club", first_name: "Léa", last_name: "Durand", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
@@ -57,7 +60,10 @@ puts "#{Post.all.size} posts créés"
 200.times do Message.create(content: Faker::HeyArnold.quote, post: Post.all.sample, user: User.all.sample) end
 puts "#{Message.all.size} messages créés"
 
-types_names = ["Couches", "Lait", "Bouffe", "Autre"]
-types_names.each do |type| Type.create(name: type) end
+Type.create(name: "Couches", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/c_fill,g_north,h_320,w_527/v1507880876/Diapers_caz57d.jpg")
+Type.create(name: "Lait en poudre", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507880876/ScarfaceLaitPoudre_bgtz4o.jpg")
+Type.create(name: "Nourriture", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507880876/Nourriture_yp5vqu.jpg")
+puts "#{Type.all.size} types créés"
+
 20.times do Product.create(name: Faker::Commerce.product_name, type: Type.all.sample, price: rand(99)) end
 puts "#{Product.all.size} produits créés"
