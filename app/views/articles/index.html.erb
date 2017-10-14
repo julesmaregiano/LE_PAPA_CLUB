@@ -5,7 +5,6 @@
         <div class="article-top flex-horizontal">
           <h1><%= article.title %></h1>
     <% end %>
-          <h5 id="timer">Il y a <%=((Time.now - article.created_at)).to_i / 60%> min</h5>
         </div>
         <div class="article-preview">
         <% if article.photo? %>

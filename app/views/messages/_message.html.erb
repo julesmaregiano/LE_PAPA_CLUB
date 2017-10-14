@@ -8,7 +8,7 @@
         <h5><%= message.user.babies.size %> morveux</h5>
       </div>
     </div>
-    <h5 id="timer">Il y a <%=((Time.now - message.created_at)).to_i / 60%> min</h5>
+      <%= render "shared/timer", post: message %>
   </div>
 
   <div class="message-content card-content">

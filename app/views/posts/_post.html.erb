@@ -9,7 +9,7 @@
           <h5><%= post.user.babies.size %> morveux</h5>
         </div>
       </div>
-      <h5 id="timer">Il y a <%=((Time.now - post.created_at)).to_i / 60%> min</h5>
+      <%= render "shared/timer", post: post %>
     </div>
 
     <div class="post-content card-content">
