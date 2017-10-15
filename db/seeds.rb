@@ -41,7 +41,7 @@ category = [1, 2, 3, 4, 5]
 lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, beatae. Consequatur similique eveniet quasi accusamus neque iure beatae repellendus maxime, pariatur suscipit tempore quaerat ex iste esse labore eaque sit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi repellat aspernatur consectetur autem doloribus corporis sunt placeat odio, delectus, quo fugiat nulla deserunt, voluptas reiciendis rerum facilis perferendis modi at! "
 
 
-15.times do Article.create(title: Faker::Book.title, content: lorem, category: Category.all.sample, user: User.all.sample) end
+5.times do Article.create(title: Faker::Book.title, content: lorem, photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1506610357/hlxlrjgpgdx3r1ffgnod.jpg", category: Category.all.sample, user: User.all.sample) end
 puts "#{Article.all.size} articles créés"
 
 ChatRoom.create(name: "Général", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507625860/DeGaulle_small_ogly9a.jpg")

@@ -1,46 +1,58 @@
-body {
-// background: linear-gradient(45deg, #000000, #434343);
-}
-
-body, a {
-  margin: 0;
+h1, h2, h3, h4, h5, p, a {
+  text-decoration: none;
+  color: $dark-gray;
 }
 
 // Gros titres
 h1 {
-  font-size: 22px;
-  color: white;
-  margin: 0;
+  font-size: 23px;
+  color: $purple;
+  opacity: 0.9;
+  margin: 0px;
+  font-weight: lighter;
+  padding: 10px 0px 5px 0px;
 }
 
 h2 {
-  font-size: 19px;
-  color: black;
   margin: 0px;
+  font-size: 22px;
+  color: white;
+  text-shadow: 2px 2px 1px $purple;
 }
 
 // Noms des utilisateurs dans les chats
 h3 {
-  font-size: 18px;
+  size: 19px;
   font-family: $body-font;
-  margin: 0px;
-}
-
-h4 {
-  font-size: 16px;
-  font-family: $body-font;
-  margin: 0px;
-}
-
-// Infos complémentaires, sous-titres dans les chats
-h5 {
-  font-size: 14px;
-  font-family: $body-font;
+  color: $dark-gray;
   margin: 0px;
 }
 
 // Textes longs (chats, articles)
 a, p {
-  font-size: 16px;
+  font-size: 19px;
+  color: $dark-gray;
   margin: 0px;
+  font-family: $body-font;
+}
+
+i {
+  font-size: 26px !important;
+  color: $gray;
+}
+
+// Infos complémentaires, sous-titres dans les chats
+h4 {
+  font-size: 17px;
+  font-family: $body-font;
+  margin: 0px;
+  color: $dark-gray;
+}
+
+h5 {
+  font-size: 14px;
+  color: $gray;
+  font-family: $body-font;
+  margin: 0px;
+  text-decoration: none;
 }

@@ -54,16 +54,13 @@
       setTimeout(function(){$('#post_content').focus();}, 1000);
     });
 
-    scrollLastPostIntoView();
-
     App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create(
       { channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> },
       {
         received: (data) => {
           if (data.current_user_id !== <%= current_user.id %>) {
             const postsContainer = document.querySelector('.posts');
-            postsContainer.insertAdjacentHTML('beforeend', data.post_partial);
-            scrollLastPostIntoView();
+            postsContainer.insertAdjacentHTML('afterbegin', data.post_partial);
           }
         }
       })

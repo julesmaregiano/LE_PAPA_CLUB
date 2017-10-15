@@ -1,5 +1,11 @@
-.article-banner {
-  & img {
-    margin: 0px;
+.article-top {
+  & h1 {
+  padding: 10px 8px;
+  }
+}
+
+.article-preview {
+  & h4 {
+  padding: 4px 8px;
   }
 }

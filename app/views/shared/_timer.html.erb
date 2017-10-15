@@ -1,0 +1,8 @@
+      <% elapsed_time = ((Time.now - post.created_at)).to_i %>
+      <% if (elapsed_time / 60) < 60  %>
+        <h5 id="timer">Il y a <%=elapsed_time / 60%> min</h5>
+      <% elsif (elapsed_time / 60 ) < (60 * 24) %>
+        <h5 id="timer">Il y a <%=elapsed_time / 3600%> h</h5>
+      <% else %>
+        <h5 id="timer">Il y a <%= pluralize((elapsed_time / 86400), "jour") %></h5>
+      <% end %>
