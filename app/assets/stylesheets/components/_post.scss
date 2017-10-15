@@ -30,6 +30,22 @@
   padding: 10px;
 }
 
+.post-bottom-left{
+  display: flex;
+  justify-content: flex-start;
+  & h5 {
+    margin: 0px 10px 0px 5px;
+  }
+}
+
+.post-bottom-right {
+  display: flex;
+  justify-content: flex-end;
+    & i {
+    margin: 0px 5px 0px 10px;
+  }
+}
+
 // Form input
 #create-post {
   padding: 10px;
