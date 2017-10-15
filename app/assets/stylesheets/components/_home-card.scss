@@ -9,10 +9,11 @@
   }
   h1 {
     text-align : center;
-    color: $purple;
-    text-shadow: 2px 2px 1px $yellow;
-    &:hover {
+    color: $green;
+    text-shadow: 2px 2px 0px $purple;
     font-weight: bold;
+    opacity: 1;
+    &:hover {
     color: white;
     text-decoration: none !important;
     }

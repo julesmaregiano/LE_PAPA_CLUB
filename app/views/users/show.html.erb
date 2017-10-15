@@ -1,4 +1,4 @@
-<div class="container carousel">
+<div class="container navbar-space">
   <% if @user.profile_pic? %>
     <%= cl_image_tag @user.profile_pic.path, width: 250, height: 250, crop: :fill, class: "avatar-medium" %>
   <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/250/250" %>

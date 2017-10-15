@@ -7,7 +7,7 @@ html, body, #bgimage {
   text-shadow: 2px 2px 0px white;
   position: absolute;
   font-weight: bold;
-  right: 25%;
+  right: calc(50% - 110px );
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -19,7 +19,6 @@ h1, h2, h3, h4, h5, p, a {
 h1 {
   font-size: 23px;
   color: $purple;
-  opacity: 0.9;
   margin: 0px;
   font-weight: lighter;
   padding: 10px 0px 5px 0px;
