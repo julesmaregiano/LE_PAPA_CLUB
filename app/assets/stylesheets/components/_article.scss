@@ -9,3 +9,15 @@
   padding: 4px 8px;
   }
 }
+
+#article {
+  & h5 {
+    margin-bottom: 15px;
+  }
+  & img {
+    margin: 10px;
+  }
+  & p {
+  padding: 10px 15px;
+  }
+}
