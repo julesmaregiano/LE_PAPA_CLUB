@@ -2,12 +2,17 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <!-- For Progressive Web App purposes : -->
+    <meta name="viewport" content="width=412, initial-scale=1"/>
+    <meta name="theme-color" content="#e31a90"/>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <!-- fin des metas pour la PWA -->
+    <title>Le Club des Darons</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-  </head>
+  <link rel="manifest" href="/manifest.json" />
+<meta name="apple-mobile-web-app-capable" content="yes"></head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>

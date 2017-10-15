@@ -12,9 +12,9 @@
       <%= render "shared/timer", post: post %>
     </div>
 
-    <div class="post-content card-content">
+    <div class="post-content card-content text-center">
       <% if post.photo? %>
-        <%= cl_image_tag post.photo.path, width: 300, height: 300, crop: :fill %>
+        <%= cl_image_tag post.photo.path, width: 300, height: 300, crop: :fill, class: "post-image"  %>
       <% end %>
       <p><%= post.content %></p>
     </div>

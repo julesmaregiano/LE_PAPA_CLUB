@@ -14,15 +14,17 @@
 }
 
 // Contenu du post
-
 #post_content {
   padding: 0px;
   height: 30px;
   width: 300px;
 }
 
-// Bas du post
+.post-image {
+  border-radius: 2%;
+}
 
+// Bas du post
 .post-bottom {
   display: flex;
   align-items: center;

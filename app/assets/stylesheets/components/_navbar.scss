@@ -8,8 +8,12 @@
   width: 100%;
   z-index: 100;
   & i, h3 {
-    color: $purple;
-    text-shadow: 2px 2px 1px $yellow;
+    color: white;
+    text-shadow: 2px 2px 0px $green;
+    background-color: $yellow;
+    box-shadow: 1px 1px 0px $gray;
+    padding: 13px 15px;
+    border-radius: 50%;
   }
 }
 
@@ -18,21 +22,21 @@
   text-shadow: $yellow;
 }
 
+// Propriétées boutton déroulant de droite
 .navbar-item {
   font-size: 25px;
   cursor: pointer;
-  padding: 0 2px;
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 10px;
   z-index: 100;
   color: $purple;
 }
 
+// Propriétées back à gauche
 .back-btn {
   font-size: 25px;
   cursor: pointer;
-  padding: 0 2px;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -45,7 +49,7 @@
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
   z-index: 100;
-  opacity: 0.8;
+  opacity: 0.95;
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
