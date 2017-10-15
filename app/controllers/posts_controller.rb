@@ -14,6 +14,17 @@ class PostsController < ApplicationController
     @post.chat_room = @chat_room
     @post.user = current_user
     if @post.save
+      ActionCable.server.broadcast("chat_room_#{@chat_room.id}", {
+        post_partial: ApplicationController.renderer.render(
+          partial: "posts/post",
+          locals: {
+            post: @post,
+            user_is_posts_author: false,
+            current_user: current_user
+          }
+        ),
+        current_user_id: current_user.id
+      })
       respond_to do |format|
         format.html { redirect_to chat_room_path(@chat_room) }
         format.js
