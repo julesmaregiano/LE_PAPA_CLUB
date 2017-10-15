@@ -3,13 +3,13 @@
     <%= link_to product.link, target: :_blank do %>
       <div class="card-design">
         <div class="article-top">
-          <h3><%= product.name %></h3>
+          <h1><%= product.name %></h1>
         </div>
-        <div class="article-preview">
+        <div class="article-preview text-center">
           <% if product.image_small_url? %>
             <%= image_tag product.image_small_url, class: 'product-image' %>
           <% end %>
-          <h5><%= product.subtitle %></h5>
+          <p><%= product.subtitle %></p>
         </div>
       </div>
     <% end %>
