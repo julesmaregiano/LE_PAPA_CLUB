@@ -1,10 +1,9 @@
-<% unless @user.babies.empty? %>
-  <%= simple_form_for [@user, @user.babies.first] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :date_of_birth %>
-    <%= f.input :gender %>
-    <%= f.input :weight %>
-    <%= f.input :height %>
-    <%= f.submit %>
-  <% end %>
+<%= simple_form_for [@user, baby] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :date_of_birth %>
+  <%= f.input :gender %>
+  <%= f.input :weight %>
+  <%= f.input :height %>
+  <%= f.submit %>
 <% end %>
+

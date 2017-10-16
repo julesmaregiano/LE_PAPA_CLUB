@@ -2,9 +2,11 @@ class BabiesController < ApplicationController
 
   def update
     @user = current_user
-    @baby = @user.babies.first
+    @baby = Baby.find(params[:id])
     if @baby.update(baby_params)
-      render "users/edit"
+      redirect_to(@user)
+    else
+      render :edit
     end
   end
 

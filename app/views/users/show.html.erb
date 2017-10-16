@@ -1,22 +1,42 @@
-<div class="container carousel">
+<div class="container carousel text-center">
   <% if @user.profile_pic? %>
-    <%= cl_image_tag @user.profile_pic.path, width: 250, height: 250, crop: :fill, class: "avatar-medium" %>
-  <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/250/250" %>
+    <%= cl_image_tag @user.profile_pic.path, width: 70, height: 70, crop: :fill, class: "avatar-profile" %>
+  <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/200/200" %>
     <img class="avatar-profile" src=<%= avatar_url %> alt="">
   <% end %>
-  <div class="card-design">
-    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-    <p></p>
+
+  <div class="card-design container">
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <p><%= @user.email %></p>
-  </div>
-  <div class="card-design">
-    <h2>Votre mioche</h2>
-    <p><%= @user.babies %></p>
+    <h4><%= link_to "Editer!", edit_user_path(@user) %></h4>
+    <div class="row">
+      <h1>Votre mioche</h1>
+      <% @user.babies.each do |baby| %>
+        <div class="col-xs-6">
+          <h3><%= baby.name %></h3>
+          <% if baby.age < 30 %>
+            <h4><%= baby.age %></h4>
+          <% elsif baby.age < 365 %>
+            <h4><%= (baby.age / 12) %> mois</h4>
+          <% else %>
+            <h4><%= baby.age/365 %> ans</h4>
+          <% end %>
+          <h4><%= baby.gender == 0  ? "fille" : "garçon" %></h4>
+          <h4>taille: <%= baby.height%>cm</h4>
+          <h4>poids: <%= baby.weight%>kg</h4>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="my-likes card-design">
-    <% @posts.each do |post| %>
-      <p><%= post.content %></p>
+  <div class="my-likes">
+  <h3>Vos messages</h3>
+    <% if @posts.empty? %>
+      <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
+    <% else %>
+      <% @posts.each do |post| %>
+        <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
+      <% end %>
     <% end %>
   </div>
 </div>
