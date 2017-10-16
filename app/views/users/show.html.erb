@@ -4,11 +4,15 @@
   <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/200/200" %>
     <img class="avatar-profile" src=<%= avatar_url %> alt="">
   <% end %>
+</div>
 
-  <div class="card-design container">
+<div class="white-background">
+  <div class="text-center">
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-    <p><%= @user.email %></p>
-    <h4><%= link_to "Editer!", edit_user_path(@user) %></h4>
+    <h4><%= @user.email %></h4>
+    <%= link_to edit_user_path(@user) do %>
+    <i class="fa pencil-square-o"></i>
+    <% end %>
     <div class="row">
       <h1>Votre mioche</h1>
       <% @user.babies.each do |baby| %>
@@ -28,7 +32,9 @@
       <% end %>
     </div>
   </div>
+</div>
 
+<div class="container">
   <div class="my-likes">
   <h3>Vos messages</h3>
     <% if @posts.empty? %>

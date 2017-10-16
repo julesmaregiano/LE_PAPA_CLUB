@@ -1,0 +1,30 @@
+.profile-top {
+  display: flex;
+  align-items: center;
+  & h1, p {
+    color: white;
+  }
+  & i {
+    color: $purple;
+  }
+}
+
+.profile-right {
+  margin: 0px 15px;
+}
+
+.profile-kids {
+  width: 100%;
+}
+
+.avatar-profile {
+  width: 250px;
+  height: 250px;
+  margin-top: 5vh;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.profile {
+  position: relative;
+}
