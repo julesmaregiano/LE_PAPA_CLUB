@@ -19,6 +19,14 @@
   object-fit: cover;
 }
 
+.avatar-profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50% 50% 50% 50%;
+  margin: 10px 10px 0px 20px;
+  object-fit: cover;
+}
+
 .product-image {
   height: 120px;
   padding: 10px 100px;
@@ -26,4 +34,9 @@
 
 .border-white {
   border: 2px solid white;
+}
+
+.baby-avatar {
+  width: 100%;
+  border-radius: 5%;
 }

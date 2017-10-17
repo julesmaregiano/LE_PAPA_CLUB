@@ -7,10 +7,11 @@
   img {
     width: 100%
   }
-  h1 {
+  h2 {
+    opacity: 1 !important;
     text-align : center;
     color: $purple;
-    text-shadow: 2px 2px 1px $yellow;
+    text-shadow: 2px 2px 0px $yellow;
     &:hover {
     font-weight: bold;
     color: white;

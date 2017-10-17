@@ -1,36 +1,45 @@
 <div class="container carousel text-center">
-  <% if @user.profile_pic? %>
-    <%= cl_image_tag @user.profile_pic.path, width: 70, height: 70, crop: :fill, class: "avatar-profile" %>
-  <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/200/200" %>
-    <img class="avatar-profile" src=<%= avatar_url %> alt="">
-  <% end %>
 </div>
 
-<div class="white-background">
-  <div class="text-center">
+<div class="white-background navbar-space">
+  <div class="profile-top">
+    <% if @user.profile_pic? %>
+      <%= cl_image_tag @user.profile_pic.path, width: 200, height: 200, crop: :fill, class: "avatar-profile" %>
+    <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/200/200" %>
+      <img class="avatar-profile" src=<%= avatar_url %> alt="">
+    <% end %>
+    <%= link_to "Editer profil", edit_user_path(@user), class: "cute-button-purple" %>
+  </div>
+
+  <div class="profile-middle">
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <h4><%= @user.email %></h4>
-    <%= link_to edit_user_path(@user) do %>
-    <i class="fa pencil-square-o"></i>
+  </div>
+  <div class="profile-kids text-center">
+    <% @user.babies.each do |baby| %>
+      <div class="kid-card card-design">
+        <img class="baby-avatar" src="https://www.fillmurray.com/120/120" alt="">
+        <h3><%= baby.name.first(14)%></h3>
+        <% if baby.age < 30 %>
+          <h4><%= baby.age %> jours</h4>
+        <% elsif baby.age < 365 %>
+          <h4><%= (baby.age / 12) %> mois</h4>
+        <% else %>
+          <h4><%= baby.age/365 %> ans</h4>
+        <% end %>
+        <h4><%= baby.gender == 0  ? "fille" : "garçon" %></h4>
+        <h4>taille: <%= baby.height%>cm</h4>
+        <h4>poids: <%= baby.weight%>kg</h4>
+      </div>
     <% end %>
-    <div class="row">
-      <h1>Votre mioche</h1>
-      <% @user.babies.each do |baby| %>
-        <div class="col-xs-6">
-          <h3><%= baby.name %></h3>
-          <% if baby.age < 30 %>
-            <h4><%= baby.age %></h4>
-          <% elsif baby.age < 365 %>
-            <h4><%= (baby.age / 12) %> mois</h4>
-          <% else %>
-            <h4><%= baby.age/365 %> ans</h4>
-          <% end %>
-          <h4><%= baby.gender == 0  ? "fille" : "garçon" %></h4>
-          <h4>taille: <%= baby.height%>cm</h4>
-          <h4>poids: <%= baby.weight%>kg</h4>
-        </div>
+
+    <div id="add-kid" class="kid-card card-design">
+      <img class="baby-avatar" src="https://www.fillmurray.com/120/120" alt="">
+      <%= link_to new_user_baby_path(@user) do %>
+        <h4>Ajouter un mioche</h4>
       <% end %>
     </div>
+
   </div>
 </div>
 
