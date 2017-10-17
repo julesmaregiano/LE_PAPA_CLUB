@@ -1,0 +1,16 @@
+<div class="kid-card card-design">
+  <div class="baby-avatar text-center"
+       style="background-image: linear-gradient(rgba(255,255,255,0), rgba(0,0,0,0.3)), url('https://www.fillmurray.com/150/150')">
+    <h3><%= baby.name.first(14)%></h3>
+  </div>
+  <% if baby.age < 30 %>
+    <h4><%= baby.age %> jours</h4>
+  <% elsif baby.age < 365 %>
+    <h4><%= (baby.age / 12) %> mois</h4>
+  <% else %>
+    <h4><%= baby.age/365 %> ans</h4>
+  <% end %>
+  <h5><%= baby.gender == 0  ? "fille" : "garçon" %></h5>
+  <h5>taille: <%= baby.height%>cm</h5>
+  <h5>poids: <%= baby.weight%>kg</h5>
+</div>

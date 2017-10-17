@@ -17,20 +17,7 @@
   </div>
   <div class="profile-kids text-center">
     <% @user.babies.each do |baby| %>
-      <div class="kid-card card-design">
-        <img class="baby-avatar" src="https://www.fillmurray.com/120/120" alt="">
-        <h3><%= baby.name.first(14)%></h3>
-        <% if baby.age < 30 %>
-          <h4><%= baby.age %> jours</h4>
-        <% elsif baby.age < 365 %>
-          <h4><%= (baby.age / 12) %> mois</h4>
-        <% else %>
-          <h4><%= baby.age/365 %> ans</h4>
-        <% end %>
-        <h4><%= baby.gender == 0  ? "fille" : "garçon" %></h4>
-        <h4>taille: <%= baby.height%>cm</h4>
-        <h4>poids: <%= baby.weight%>kg</h4>
-      </div>
+      <%= render "babies/baby_card", baby: baby %>
     <% end %>
 
     <div id="add-kid" class="kid-card card-design">
@@ -41,17 +28,17 @@
     </div>
 
   </div>
+
+    <h3>Vos messages</h3>
+    <div class="my-likes">
+      <% if @posts.empty? %>
+        <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
+      <% else %>
+        <% @posts.each do |post| %>
+          <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
+        <% end %>
+      <% end %>
+    </div>
+
 </div>
 
-<div class="container">
-  <h3>Vos messages</h3>
-  <div class="my-likes">
-    <% if @posts.empty? %>
-      <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
-    <% else %>
-      <% @posts.each do |post| %>
-        <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
