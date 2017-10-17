@@ -1,8 +1,13 @@
 <div class="kid-card card-design">
-  <div class="baby-avatar text-center"
-       style="background-image: linear-gradient(rgba(255,255,255,0), rgba(0,0,0,0.3)), url('https://www.fillmurray.com/150/150')">
+  <% baby.photo? ? avatar_url = baby.photo.path : avatar_url = "http://res.cloudinary.com/zanzibar/image/upload/v1507717890/qrhsppul92yjc6ggq76a.jpg" %>
+
+    <div class="baby-avatar text-center"
+         style="background-image: linear-gradient(rgba(255,255,255,0),
+                rgba(0,0,0,0.3)),
+                url('<%= cl_image_path avatar_url, height: 140, width: 140, crop: :fill %>')">
     <h3><%= baby.name.first(14)%></h3>
-  </div>
+    </div>
+
   <% if baby.age < 30 %>
     <h4><%= baby.age %> jours</h4>
   <% elsif baby.age < 365 %>
@@ -10,7 +15,9 @@
   <% else %>
     <h4><%= baby.age/365 %> ans</h4>
   <% end %>
+
   <h5><%= baby.gender == 0  ? "fille" : "garçon" %></h5>
   <h5>taille: <%= baby.height%>cm</h5>
   <h5>poids: <%= baby.weight%>kg</h5>
+
 </div>
