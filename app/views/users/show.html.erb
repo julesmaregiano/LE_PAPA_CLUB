@@ -1,7 +1,7 @@
 <div class="container carousel text-center">
 </div>
 
-<div class="white-background navbar-space">
+<div class="profile-background white-background navbar-space">
   <div class="profile-top">
     <% if @user.profile_pic? %>
       <%= cl_image_tag @user.profile_pic.path, width: 200, height: 200, crop: :fill, class: "avatar-profile" %>
@@ -44,8 +44,8 @@
 </div>
 
 <div class="container">
-  <div class="my-likes">
   <h3>Vos messages</h3>
+  <div class="my-likes">
     <% if @posts.empty? %>
       <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
     <% else %>
