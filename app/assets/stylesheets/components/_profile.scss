@@ -1,6 +1,12 @@
+.profile-background {
+  border-radius: 45% 5% 5% 5%;
+  height: calc(100vh - 45px);
+}
+
 .profile-top {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   & h1, p {
     color: white;
   }
@@ -55,4 +61,27 @@
 
 .baby-infos {
   width: 100px;
+}
+
+.nav {
+  margin-bottom: 1vh;
+  padding: 0px 3vh;
+  & a {
+    padding: 5px 10px;
+    }
+}
+
+.nav-tabs {
+  border: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: white;
+  color: $purple;
+  border: none;
+}
+
+.nav-tabs > li > a, .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+  color: $dark-gray;
+  border: none;
 }
