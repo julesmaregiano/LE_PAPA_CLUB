@@ -20,12 +20,19 @@
       <%= render "babies/baby_card", baby: baby %>
     <% end %>
 
-    <div id="add-kid" class="kid-card card-design">
-      <img class="baby-avatar" src="https://www.fillmurray.com/120/120" alt="">
+
+  <div id="add-kid" class="kid-card card-design">
+    <div class="baby-avatar text-center"
+         style="background-image: linear-gradient(rgba(255,255,255,0),
+                rgba(0,0,0,0.3)),
+                url('<%= cl_image_path 'https://www.fillmurray.com/100/100', height: 100, width: 100, crop: :fill %>')">
+    </div>
+    <div class="baby-infos">
       <%= link_to new_user_baby_path(@user) do %>
         <h4>Ajouter un mioche</h4>
       <% end %>
     </div>
+  </div>
 
   </div>
 
