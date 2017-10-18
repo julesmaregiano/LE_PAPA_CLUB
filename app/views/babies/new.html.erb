@@ -1,4 +1,4 @@
-<%= simple_form_for [@user, baby] do |f| %>
+<%= simple_form_for [@user, @baby] do |f| %>
   <%= f.input :name %>
   <%= f.input :date_of_birth %>
   <%= f.input :gender %>
@@ -6,4 +6,3 @@
   <%= f.input :height %>
   <%= f.submit %>
 <% end %>
-

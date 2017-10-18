@@ -20,10 +20,12 @@
 }
 
 .avatar-profile {
-  width: 250px;
-  height: 250px;
-  border-radius: 5%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50% 50% 50% 50%;
+  margin: 10px 10px 0px 20px;
   object-fit: cover;
+  box-shadow: 1px 1px 3px $gray;
 }
 
 .product-image {
@@ -34,3 +36,4 @@
 .border-white {
   border: 2px solid white;
 }
+

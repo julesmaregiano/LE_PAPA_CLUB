@@ -8,5 +8,11 @@
     <%= f.submit %>
   <% end %>
   <h1>Votre mioche</h1>
-  <%= render "babies/edit" %>
+  <% if @babies.empty? %>
+    <p>Pas de bébé? ALlez en faire un tout de suite !</p>
+  <% else %>
+    <% @babies.each do |baby| %>
+      <%= render "babies/edit", baby: baby %>
+    <% end %>
+  <% end %>
 </div>

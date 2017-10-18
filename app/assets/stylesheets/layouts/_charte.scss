@@ -1,5 +1,5 @@
 html, body, #bgimage {
-  background: url(background.png);
+  background: $purple;
 }
 
 #logo-cdd {
@@ -7,7 +7,7 @@ html, body, #bgimage {
   text-shadow: 2px 2px 0px white;
   position: absolute;
   font-weight: bold;
-  right: calc(50% - 110px );
+  left: calc(50% - 111px);
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -19,6 +19,7 @@ h1, h2, h3, h4, h5, p, a {
 h1 {
   font-size: 23px;
   color: $purple;
+  opacity: 0.95;
   margin: 0px;
   font-weight: lighter;
   padding: 10px 0px 5px 0px;

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [ :show, :edit, :update] do
-    resources :babies, only: [:edit, :update]
+    resources :babies, only: [:edit, :update, :create, :new]
   end
 
 end

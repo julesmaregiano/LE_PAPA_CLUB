@@ -1,22 +1,51 @@
-<div class="container navbar-space">
-  <% if @user.profile_pic? %>
-    <%= cl_image_tag @user.profile_pic.path, width: 250, height: 250, crop: :fill, class: "avatar-medium" %>
-  <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/250/250" %>
-    <img class="avatar-profile" src=<%= avatar_url %> alt="">
-  <% end %>
-  <div class="card-design">
-    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-    <p></p>
-    <p><%= @user.email %></p>
-  </div>
-  <div class="card-design">
-    <h2>Votre mioche</h2>
-    <p><%= @user.babies %></p>
+<div class="container carousel text-center">
+</div>
+
+<div class="profile-background white-background navbar-space">
+  <div class="profile-top">
+    <% if @user.profile_pic? %>
+      <%= cl_image_tag @user.profile_pic.path, width: 200, height: 200, crop: :fill, class: "avatar-profile" %>
+    <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/200/200" %>
+      <img class="avatar-profile" src=<%= avatar_url %> alt="">
+    <% end %>
+    <%= link_to "Editer profil", edit_user_path(@user), class: "cute-button-purple" %>
   </div>
 
-  <div class="my-likes card-design">
-    <% @posts.each do |post| %>
-      <p><%= post.content %></p>
-    <% end %>
+  <div class="profile-middle">
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    <h4><%= @user.email %></h4>
   </div>
+  <div class="profile-kids text-center">
+    <% @user.babies.each do |baby| %>
+      <%= render "babies/baby_card", baby: baby %>
+    <% end %>
+
+
+  <div id="add-kid" class="kid-card card-design">
+    <div class="baby-avatar text-center"
+         style="background-image: linear-gradient(rgba(255,255,255,0),
+                rgba(0,0,0,0.3)),
+                url('<%= cl_image_path 'https://www.fillmurray.com/100/100', height: 100, width: 100, crop: :fill %>')">
+    </div>
+    <div class="baby-infos">
+      <%= link_to new_user_baby_path(@user) do %>
+        <h4>Ajouter un mioche</h4>
+      <% end %>
+    </div>
+  </div>
+
+  </div>
+
+    <h3>Vos messages</h3>
+    <div class="my-likes">
+      <% if @posts.empty? %>
+        <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
+      <% else %>
+        <% @posts.each do |post| %>
+          <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
+        <% end %>
+      <% end %>
+    </div>
+
 </div>
+
