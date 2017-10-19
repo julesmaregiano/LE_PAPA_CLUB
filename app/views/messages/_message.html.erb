@@ -1,7 +1,7 @@
 <div class="card-design message <%= user_is_messages_author ? "right" : "" %>">
 
   <div class="message-top">
-      <%= render "shared/avatar", post: message %>
+      <%= render "shared/avatar", user: message.user %>
     <div>
       <div class="card-author">
         <p><%= message.user.first_name[0..12] %><%= message.user.first_name.size > 12 ? ".." : "" %> </p>
