@@ -1,5 +1,10 @@
 class BabiesController < ApplicationController
 
+  def edit
+    @user = current_user
+    @baby = Baby.find(params[:id])
+  end
+
   def update
     @user = current_user
     @baby = Baby.find(params[:id])

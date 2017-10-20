@@ -58,3 +58,20 @@
 .dropdown-backdrop {
   z-index: 12;
 }
+
+
+.modal * .form-control {
+  background: white;
+  border: 0px solid white;
+  box-shadow: none;
+  font-size: 18px;
+  color: $dark-gray;
+  height: auto;
+  width: 100%;
+  &:focus {
+    color: $dark-gray;
+    border-bottom: 2px solid $purple;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+}
