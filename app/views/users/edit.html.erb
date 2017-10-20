@@ -8,21 +8,14 @@
       <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/120/120" %>
         <img class="avatar-large" src=<%= avatar_url %> alt="">
       <% end %>
-      <%= f.input :profile_pic, as: :attachinary %>
+      <%= f.input :profile_pic, as: :attachinary, label: 'Changer ma photo' %>
     </div>
 
     <%= f.input :first_name %>
     <%= f.input :last_name %>
-    <%= f.input :date_of_birth %>
-    <%= f.submit %>
-  <% end %>
-
-  <h2>Vos mioches</h2>
-  <% if @babies.empty? %>
-    <p>Pas de bébé? ALlez en faire un tout de suite !</p>
-  <% else %>
-    <% @babies.each do |baby| %>
-      <%= render "babies/edit", baby: baby %>
-    <% end %>
+    <div class="form-group">
+      <%= f.input :date_of_birth %>
+    </div>
+    <%= f.submit class: "btn btn-success" %>
   <% end %>
 </div>
