@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   mount Attachinary::Engine => "/attachinary"
+  mount ActionCable.server => "/cable"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :chat_rooms, only: [ :show, :index] do
     resources :posts, only: [:index, :show, :create, :new, :delete] do
