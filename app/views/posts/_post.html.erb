@@ -2,7 +2,7 @@
   <div class="card-design post <%= user_is_posts_author ? "right" : "" %>">
 
     <div class="post-top">
-      <%= render "shared/avatar", post: post %>
+      <%= render "shared/avatar", user: post.user %>
       <div>
         <div class="card-author">
           <h1><%= post.user.first_name[0..12] %><%= post.user.first_name.size > 12 ? ".." : "" %> </h1>
