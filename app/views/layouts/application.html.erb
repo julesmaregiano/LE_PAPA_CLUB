@@ -15,7 +15,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes"></head>
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <!-- Remettre la ligne suivante entre pe ruby pour ravoir les alertes -->
+    <!-- render 'shared/flashes' -->
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
