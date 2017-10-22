@@ -1,8 +1,10 @@
-<%= simple_form_for [@user, @baby] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :date_of_birth %>
-  <%= f.input :gender %>
-  <%= f.input :weight %>
-  <%= f.input :height %>
-  <%= f.submit %>
-<% end %>
+<div class="container navbar-space">
+  <%= simple_form_for [@user, @baby] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :gender %>
+    <%= f.input :weight %>
+    <%= f.input :height %>
+    <%= f.submit "Faire un bébé", class: "btn btn-success" %>
+  <% end %>
+</div>
