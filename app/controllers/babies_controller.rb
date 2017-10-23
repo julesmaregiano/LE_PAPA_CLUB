@@ -34,6 +34,6 @@ class BabiesController < ApplicationController
   private
 
   def baby_params
-    params.require(:baby).permit(:user, :user_id, :name, :gender, :height, :weight, :date_of_birth)
+    params.require(:baby).permit(:photo, :user, :user_id, :name, :gender, :height, :weight, :date_of_birth)
   end
 end
