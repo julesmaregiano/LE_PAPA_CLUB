@@ -19,7 +19,7 @@
       <% end %>
 
       <% if baby.gender? %>
-        <h5><%= baby.gender == "0"  ? "fille" : "garçon" %></h5>
+        <h5><%= baby.gender == 0  ? "fille" : "garçon" %></h5>
       <% end %>
       <% if baby.weight? %>
         <h5><%= baby.height%> cm</h5>
