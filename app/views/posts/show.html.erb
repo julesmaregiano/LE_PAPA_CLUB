@@ -48,6 +48,7 @@
         event.preventDefault();
         $("#new_message").submit();
         setTimeout(function(){scrollLastMessageIntoView();}, 100);
+        $('#CreateMessageModal').modal('hide');
       }
     });
 
