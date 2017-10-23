@@ -1,5 +1,13 @@
 <div class="container navbar-space">
   <%= simple_form_for [@user, @baby] do |f| %>
+    <div class="profile-edit">
+      <% if @baby.photo? %>
+        <%= cl_image_tag @baby.photo.path, width: 120, height: 120, crop: :fill, class: "avatar-large" %>
+      <% else avatar_url = "http://res.cloudinary.com/zanzibar/image/upload/c_lfill,g_face:center,h_100,w_100,x_0,y_189/v1507717890/qrhsppul92yjc6ggq76a.jpg" %>
+        <img class="avatar-large" src=<%= avatar_url %> alt="">
+      <% end %>
+      <%= f.input :photo, as: :attachinary, label: 'Changer sa photo' %>
+    </div>
     <%= f.input :name %>
     <%= f.input :date_of_birth %>
     <%= f.input :gender %>
