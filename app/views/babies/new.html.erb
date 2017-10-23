@@ -9,8 +9,10 @@
       <%= f.input :photo, as: :attachinary, label: 'Changer sa photo' %>
     </div>
     <%= f.input :name %>
-    <%= f.input :date_of_birth %>
-    <%= f.input :gender %>
+    <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
+      end_year: Date.today.year - 12,
+      order: [:day, :month, :year] %>
+    <%= f.input :gender, collection: [["Garçon", "1"], ["Fille", "0"]] %>
     <%= f.input :weight %>
     <%= f.input :height %>
     <%= f.submit "Faire un bébé", class: "btn btn-success" %>

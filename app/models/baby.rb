@@ -1,6 +1,6 @@
 class Baby < ApplicationRecord
   belongs_to :user
-  enum role: [:girl, :boy]
+  enum gender: [:girl, :boy]
   has_attachment :photo
 
   def age

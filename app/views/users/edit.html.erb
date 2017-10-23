@@ -13,7 +13,9 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <div class="form-group">
-      <%= f.input :date_of_birth %>
+      <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12,
+                              order: [:day, :month, :year] %>
     </div>
     <%= f.submit class: "btn btn-success" %>
   <% end %>
