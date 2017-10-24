@@ -12,6 +12,7 @@ gem 'omniauth-facebook'
 gem 'serviceworker-rails'
 gem 'sprockets', '>= 3.0.0'
 gem 'sprockets-es6'
+gem 'postmark-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
