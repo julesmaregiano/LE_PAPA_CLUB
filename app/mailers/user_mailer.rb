@@ -5,9 +5,7 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome
-    @greeting = "Hi"
-    @user = user
-    mail(to: @user.email, subject: "Tu as fait le choix de te comporter en homme.")
+  def welcome(user)
+    mail(to: user.email, subject: "Tu as fait le choix de te comporter en homme.")
   end
 end
