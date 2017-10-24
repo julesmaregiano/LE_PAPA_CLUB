@@ -1,3 +1,7 @@
+ <% content_for :navbar do %>
+      <%= render 'shared/navbar_sanslogo' %>
+ <% end %>
+
 <% @types.each do |type| %>
   <%= link_to type_products_path type do %>
     <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path type.photo.path, height: 200, width: 400, crop: :fill %>') no-repeat center center; background-size: cover;">
