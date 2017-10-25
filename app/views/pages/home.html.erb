@@ -3,17 +3,17 @@
  <% end %>
 
 <%= link_to articles_path do %>
-  <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/zanzibar/image/upload/c_scale,w_428/v1508769406/Dad1_csqoio.jpg') no-repeat center center; background-size: cover;">
+  <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @categories.first.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover;">
     <h2>Articles & Connaissances</h2>
   </div>
 <% end %>
 <%= link_to chat_room_path(ChatRoom.first) do %>
-  <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/zanzibar/image/upload/c_scale,w_428/v1508769407/Dad2_lwttgu.jpg') no-repeat center center; background-size: cover;">
+  <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @categories.second.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover;">
     <h2>Le coin des Darons</h2>
   </div>
 <% end %>
 <%= link_to types_path do %>
-  <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/zanzibar/image/upload/c_scale,w_428/v1508769406/Dad3_lie7wd.jpg') no-repeat center center; background-size: cover;">
+  <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @categories.third.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover;">
     <h2>La télécommande magique</h2>
   </div>
 <% end %>
