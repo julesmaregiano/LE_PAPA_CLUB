@@ -5,4 +5,5 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require_tree .
+//= require_tree ./channels
 //= require serviceworker-companion
