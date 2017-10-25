@@ -1,6 +1,5 @@
 .form-registration {
-  margin-top: 80px;
-  height: 100vh;
+  margin-top: 10vh;
   h2 {
     font-weight: bold;
     margin-bottom: 30px;
@@ -27,9 +26,9 @@
     color: $red;
   }
   .btn:hover {
-    background-color: $blue;
+    background-color: $green;
     color: white;
-    border-color: $blue;
+    border-color: $green;
   }
   a {
     color: white;
