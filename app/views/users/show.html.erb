@@ -18,17 +18,17 @@
 
   <div class="profile-kids text-center">
     <% @user.babies.each do |baby| %>
-      <%= render "babies/baby_card", baby: baby %>
+    <%= render "babies/baby_card", baby: baby %>
     <% end %>
     <div id="add-kid" class="kid-card card-design">
       <div class="baby-avatar text-center"
-           style="background-image: linear-gradient(rgba(255,255,255,0),
-                  rgba(0,0,0,0.3)),
-                  url('<%= cl_image_path 'https://www.fillmurray.com/100/100', height: 100, width: 100, crop: :fill %>')">
+      style="background-image: linear-gradient(rgba(255,255,255,0),
+        rgba(0,0,0,0.3)),
+        url('<%= cl_image_path 'https://www.fillmurray.com/100/100', height: 100, width: 100, crop: :fill %>')">
       </div>
       <div class="baby-infos">
         <%= link_to new_user_baby_path(@user) do %>
-          <h4>Ajouter un mioche</h4>
+        <h4>Ajouter un mioche</h4>
         <% end %>
       </div>
     </div>
@@ -39,36 +39,28 @@
     <li role="presentation"><a data-target="#profile" aria-controls="profile" role="tab" data-toggle="tab">Likes</a></li>
   </ul>
   <!-- Tab panes -->
-  <div class="container">
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="home">
-        <div class="my-likes">
-          <% if @my_posts.empty? %>
-            <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
-          <% else %>
-            <% @my_posts.each do |post| %>
-              <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
-            <% end %>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <div class="my-likes">
+        <% if @my_posts.empty? %>
+          <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
+        <% else %>
+          <% @my_posts.each do |post| %>
+            <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
           <% end %>
-        </div>
+        <% end %>
       </div>
-      <div role="tabpanel" class="tab-pane" id="profile">
-        <div class="my-likes">
-          <% if @liked_posts.empty? %>
-            <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
-          <% else %>
-            <% @liked_posts.each do |post| %>
-              <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
-            <% end %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <div class="my-likes">
+        <% if @liked_posts.empty? %>
+          <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
+        <% else %>
+          <% @liked_posts.each do |post| %>
+            <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
           <% end %>
-        </div>
-      </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-
-<div>
-
-
 </div>
