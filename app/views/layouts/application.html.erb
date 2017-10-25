@@ -21,7 +21,11 @@
     <% end %>
     <!-- Remettre la ligne suivante entre pe ruby pour ravoir les alertes -->
     <!-- render 'shared/flashes' -->
-    <%= yield %>
+    <div class="container">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <%= yield %>
+      </div>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
     <%= yield(:after_js) %>
