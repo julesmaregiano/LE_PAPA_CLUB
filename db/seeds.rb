@@ -41,7 +41,7 @@ category = [1, 2, 3, 4, 5]
 lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, beatae. Consequatur similique eveniet quasi accusamus neque iure beatae repellendus maxime, pariatur suscipit tempore quaerat ex iste esse labore eaque sit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi repellat aspernatur consectetur autem doloribus corporis sunt placeat odio, delectus, quo fugiat nulla deserunt, voluptas reiciendis rerum facilis perferendis modi at! "
 
 
-5.times do Article.create(title: Faker::Book.title, content: lorem, photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1506610357/hlxlrjgpgdx3r1ffgnod.jpg", category: Category.all.sample, user: User.all.sample) end
+5.times do Article.create(title: Faker::Book.title, content: lorem, photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1508769406/Dad1_csqoio.jpg", category: Category.all.sample, user: User.all.sample) end
 puts "#{Article.all.size} articles créés"
 
 ChatRoom.create(name: "Général", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507625860/DeGaulle_small_ogly9a.jpg")
@@ -63,6 +63,10 @@ puts "#{Message.all.size} messages créés"
 Type.create(name: "Couches", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/c_fill,g_north,h_320,w_527/v1507880876/Diapers_caz57d.jpg")
 Type.create(name: "Lait en poudre", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507880876/ScarfaceLaitPoudre_bgtz4o.jpg")
 Type.create(name: "Nourriture", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507880876/Nourriture_yp5vqu.jpg")
+Type.create(name: "blog", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1508769406/Dad1_csqoio.jpg")
+Type.create(name: "chat", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1508769407/Dad2_lwttgu.jpg")
+Type.create(name: "shop", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1508769406/Dad3_lie7wd.jpg")
+
 puts "#{Type.all.size} types créés"
 
 # De 2 à 3 mois
