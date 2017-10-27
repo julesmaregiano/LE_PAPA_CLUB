@@ -33,16 +33,22 @@
 }
 
 .post-bottom-left{
-  display: flex;
-  justify-content: flex-start;
+  & a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
   & h5 {
     margin: 0px 10px 0px 5px;
   }
 }
 
 .post-bottom-right {
-  display: flex;
-  justify-content: flex-end;
+  & a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
     & i {
     margin: 0px 5px 0px 10px;
   }
@@ -77,4 +83,8 @@
   color: white;
   padding: 7px 3px;
   border-radius: 3px;
+}
+
+.liked {
+  color: $purple
 }
