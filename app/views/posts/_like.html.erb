@@ -1,0 +1,13 @@
+
+
+<% if current_user.liked? post %>
+  <%= link_to unlike_chat_room_post_path(post.chat_room, post),remote: true, method: :put do %>
+    <h5 class="liked"><%= pluralize post.get_likes.size, "like" %></h5>
+    <i class="fa fa-thumbs-o-up liked" aria-hidden="true"></i>
+  <% end %>
+<% elsif %>
+ <%= link_to like_chat_room_post_path(post.chat_room, post),remote: true, method: :put do %>
+  <h5><%= pluralize post.get_likes.size, "like" %></h5>
+  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+ <% end %>
+<% end %>

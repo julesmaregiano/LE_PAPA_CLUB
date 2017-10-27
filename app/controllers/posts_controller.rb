@@ -41,14 +41,20 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.liked_by current_user
     @chat_room = ChatRoom.find(params[:chat_room_id])
-    redirect_to chat_room_path(@chat_room)
+    respond_to do |format|
+      format.html { redirect_to chat_room_path(@chat_room) }
+      format.js
+    end
   end
 
   def unlike
     @post = Post.find(params[:id])
     @post.unliked_by current_user
     @chat_room = ChatRoom.find(params[:chat_room_id])
-    redirect_to chat_room_path(@chat_room)
+    respond_to do |format|
+      format.html { redirect_to chat_room_path(@chat_room) }
+      format.js
+    end
   end
 
   private

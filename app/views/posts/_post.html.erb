@@ -25,24 +25,15 @@
   <div class="post-bottom">
 
     <div class="post-bottom-left">
-      <h5><%= pluralize post.get_likes.size, "like" %></h5>
+
       <%= link_to chat_room_post_path(post.chat_room, post) do %>
+        <i class="fa fa-comment-o"></i>
         <h5><%= post.messages.size %> messages</h5>
       <% end %>
     </div>
-    <div class="post-bottom-right">
-      <% if current_user.liked? post %>
-        <%= link_to unlike_chat_room_post_path(post.chat_room, post),remote: true, method: :put do %>
-          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-        <% end %>
-      <% elsif %>
-         <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
-           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-         <% end %>
-       <% end %>
-      <%= link_to chat_room_post_path(post.chat_room, post) do %>
-        <i class="fa fa-comment-o"></i>
-      <% end %>
+
+    <div id="post-<%= post.id %>" class="post-bottom-right">
+      <%= render "posts/like", post: post %>
     </div>
 
   </div>
