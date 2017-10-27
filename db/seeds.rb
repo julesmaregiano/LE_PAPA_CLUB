@@ -25,9 +25,12 @@ User.create(email: "james@lepapa.club", first_name: "James", last_name: "Lambert
 User.create(email: "iso@lepapa.club", first_name: "Iso", last_name: "Hajjar", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
 20.times do User.create(email: Faker::Internet.email, first_name: Faker::HeyArnold.character, last_name:
 Faker::DrWho.specie, date_of_birth: Faker::Date.birthday(18, 65), couple_situation: 1, role: 1, password: "123soleil") end
-puts "Users créés"
+puts "#{User.all.size} Users créés"
 
+# Baby.create(name: "PlaceholderBaby", user: User.first)
 20.times do Baby.create(name: Faker::RickAndMorty.character, user: User.all.sample, date_of_birth: Faker::Date.birthday(1, 3), height: 55, weight: 9, gender: 1) end
+puts "#{Baby.all.size} Babies créés"
+
 
 Category.create(name: "Santé")
 Category.create(name: "Education")

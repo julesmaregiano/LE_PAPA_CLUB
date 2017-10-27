@@ -31,7 +31,6 @@
 .kid-card {
   display: inline-grid;
   float: left;
-  height: 25vh;
   margin: 5% 2.5%;
   position: relative;
 }
@@ -107,4 +106,12 @@
 .attachinary_container * a {
   color: white !important;
   text-decoration: none;
+}
+
+.empty-tab {
+  background: white;
+  border-radius: 5px;
+  & h4 {
+    padding: 25px 25px;
+  }
 }
