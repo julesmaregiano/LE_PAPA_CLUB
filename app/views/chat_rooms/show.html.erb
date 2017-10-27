@@ -2,10 +2,14 @@
   <%= render "index" %>
 </div>
 
-<div class="posts">
+<div id="my-posts" class="posts">
   <% @posts.each do |post| %>
-    <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
+    <%= render "posts/post", post: post %>
   <% end %>
+</div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @posts %>
 </div>
 
 <!-- Button trigger modal -->
@@ -58,7 +62,7 @@
       { channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> },
       {
         received: (data) => {
-          if (data.current_user_id !== <%= current_user.id %>) {
+          if (data.current_user_id !== <%= @user.id %>) {
             const postsContainer = document.querySelector('.posts');
             postsContainer.insertAdjacentHTML('afterbegin', data.post_partial);
           }

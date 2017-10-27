@@ -5,9 +5,14 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @chat_rooms = ChatRoom.all
     @chat_room = ChatRoom.includes(posts: :user).find(params[:id])
-    @posts = @chat_room.posts.order(created_at: :desc).first(10)
+    @posts = @chat_room.posts.paginate(page: params[:page], per_page: 10).order(id: :desc)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
 end

@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :chat_room
   has_attachment :photo
+  self.per_page = 10
 
   def from?(some_user)
     user == some_user

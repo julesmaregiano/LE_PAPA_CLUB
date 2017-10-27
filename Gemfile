@@ -13,6 +13,7 @@ gem 'serviceworker-rails'
 gem 'sprockets', '>= 3.0.0'
 gem 'sprockets-es6'
 gem 'postmark-rails'
+gem 'will_paginate', '~> 3.1.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
