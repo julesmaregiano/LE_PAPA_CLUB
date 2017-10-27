@@ -1,6 +1,6 @@
-<%= link_to chat_room_post_path(post.chat_room, post) do %>
-  <div class="card-design post <%= user_is_posts_author ? "right" : "" %>">
+<div class="card-design post <%= user_is_posts_author ? "right" : "" %>">
 
+  <%= link_to user_path(post.user) do %>
     <div class="post-top">
       <%= render "shared/avatar", user: post.user %>
       <div>
@@ -11,34 +11,39 @@
       </div>
       <%= render "shared/timer", post: post %>
     </div>
+  <% end %>
 
-    <div class="post-content card-content text-center">
-      <% if post.photo? %>
-        <%= cl_image_tag post.photo.path, width: 300, height: 300, crop: :fill, class: "post-image"  %>
-      <% end %>
-      <p><%= post.content %></p>
-    </div>
-
-    <div class="post-bottom">
-
-      <div class="post-bottom-left">
-        <h5><%= pluralize post.get_likes.size, "like" %></h5>
-        <h5><%= post.messages.size %> messages</h5>
-      </div>
-      <div class="post-bottom-right">
-        <% if current_user.liked? post %>
-          <%= link_to unlike_chat_room_post_path(post.chat_room, post),remote: true, method: :put do %>
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-          <% end %>
-        <% elsif %>
-           <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
-             <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-           <% end %>
-         <% end %>
-        <i class="fa fa-comment-o"></i>
-      </div>
-
-    </div>
+<%= link_to chat_room_post_path(post.chat_room, post) do %>
+  <div class="post-content card-content text-center">
+    <% if post.photo? %>
+      <%= cl_image_tag post.photo.path, width: 300, height: 300, crop: :fill, class: "post-image"  %>
+    <% end %>
+    <p><%= post.content %></p>
   </div>
-
 <% end %>
+
+  <div class="post-bottom">
+
+    <div class="post-bottom-left">
+      <h5><%= pluralize post.get_likes.size, "like" %></h5>
+      <%= link_to chat_room_post_path(post.chat_room, post) do %>
+        <h5><%= post.messages.size %> messages</h5>
+      <% end %>
+    </div>
+    <div class="post-bottom-right">
+      <% if current_user.liked? post %>
+        <%= link_to unlike_chat_room_post_path(post.chat_room, post),remote: true, method: :put do %>
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        <% end %>
+      <% elsif %>
+         <%= link_to like_chat_room_post_path(post.chat_room, post), method: :put do %>
+           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+         <% end %>
+       <% end %>
+      <%= link_to chat_room_post_path(post.chat_room, post) do %>
+        <i class="fa fa-comment-o"></i>
+      <% end %>
+    </div>
+
+  </div>
+</div>
