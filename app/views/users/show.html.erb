@@ -8,7 +8,9 @@
     <% else avatar_url = @user.facebook_picture_url || "https://www.fillmurray.com/200/200" %>
       <img class="avatar-profile" src=<%= avatar_url %> alt="">
     <% end %>
-    <%= link_to "Editer profil", edit_user_path(@user), class: "cute-button-purple" %>
+    <% if @user == current_user %>
+      <%= link_to "Editer profil", edit_user_path(@user), class: "cute-button-purple" %>
+    <% end %>
   </div>
 
   <div class="profile-middle text-center">
@@ -20,18 +22,20 @@
     <% @user.babies.each do |baby| %>
       <%= render "babies/baby_card", baby: baby %>
     <% end %>
-    <div id="add-kid" class="kid-card card-design">
-      <div class="baby-avatar text-center"
-           style="background-image: linear-gradient(rgba(255,255,255,0),
-                  rgba(0,0,0,0.3)),
-                  url('<%= cl_image_path 'https://www.fillmurray.com/100/100', height: 100, width: 100, crop: :fill %>')">
+    <% if @user == current_user %>
+      <div id="add-kid" class="kid-card card-design">
+        <div class="baby-avatar text-center"
+             style="background-image: linear-gradient(rgba(255,255,255,0),
+                    rgba(0,0,0,0.3)),
+                    url('<%= cl_image_path 'https://www.fillmurray.com/100/100', height: 100, width: 100, crop: :fit %>')">
+        </div>
+        <div class="baby-infos">
+          <%= link_to new_user_baby_path(@user) do %>
+            <h4>Ajouter un mioche</h4>
+          <% end %>
+        </div>
       </div>
-      <div class="baby-infos">
-        <%= link_to new_user_baby_path(@user) do %>
-          <h4>Ajouter un mioche</h4>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
   </div>
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -44,7 +48,9 @@
       <div role="tabpanel" class="tab-pane active" id="home">
         <div class="my-likes">
           <% if @my_posts.empty? %>
-            <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
+            <div class="empty-tab card-design text-center">
+              <h4>Vous n'avez encore rien posté. Ca arrive même aux meilleurs.</h4>
+            </div>
           <% else %>
             <% @my_posts.each do |post| %>
               <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
@@ -55,7 +61,9 @@
       <div role="tabpanel" class="tab-pane" id="profile">
         <div class="my-likes">
           <% if @liked_posts.empty? %>
-            <p>Vous n'avez encore rien liké ou posté.. Ca arrive, même aux meilleurs.</p>
+            <div class="empty-tab card-design text-center">
+              <h4>Vous n'avez encore rien liké. Ca arrive même aux meilleurs.</h4>
+            </div>
           <% else %>
             <% @liked_posts.each do |post| %>
               <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     @my_posts = @user.posts.sort_by(&:created_at)
     @liked_posts = @user.find_up_voted_items.sort_by(&:created_at)
     @babies = @user.babies
