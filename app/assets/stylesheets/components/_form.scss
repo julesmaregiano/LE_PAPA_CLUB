@@ -24,22 +24,28 @@
     font-style: italic;
     font-size: 14px;
   }
+
+  .form-inline > .form-group {
+    margin: 0px 2px;
+  }
+
   .btn {
     width: 100%;
     margin-bottom: 20px;
-    color: $red;
+    color: $purple;
+    margin-top: 20px;
   }
   .btn:hover {
-    background-color: $blue;
-    color: white;
-    border-color: $blue;
+    background-color: $yellow;
+    color: $purple;
+    border-color: transparent;
   }
   a {
     color: white;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
   a:hover {
-    color: $red;
+    color: $yellow;
     // font-weight: bold;
     text-decoration: none;
   }
@@ -87,9 +93,10 @@
   background: $purple;
   border: 0px solid white;
   box-shadow: none;
-  font-size: 22px;
+  font-size: 20px;
   color: white;
   height: auto;
+  border-bottom: 4px solid transparent;
 
   &:focus {
     outline: none;
@@ -102,4 +109,11 @@
 
 .form-inline {
   display: flex;
+}
+
+.required {
+  border: none;
+  & abbr {
+    border: none;
+  }
 }

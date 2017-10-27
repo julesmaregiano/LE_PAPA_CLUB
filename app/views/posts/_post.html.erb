@@ -6,7 +6,7 @@
       <div>
         <div class="card-author">
           <h1><%= post.user.first_name[0..12] %><%= post.user.first_name.size > 12 ? ".." : "" %> </h1>
-          <h5><%= post.user.babies.size %> morveux</h5>
+          <h5>@<%= post.user.username %> (<%= post.user.babies.size %> morveux)</h5>
         </div>
       </div>
       <%= render "shared/timer", post: post %>
