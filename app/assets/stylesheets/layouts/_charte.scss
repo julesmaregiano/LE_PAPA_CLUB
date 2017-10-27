@@ -3,14 +3,6 @@ html, body, #bgimage {
   background-image: url('background4.png');
 }
 
-#logo-cdd {
-  color: $yellow;
-  text-shadow: 2px 2px 0px white;
-  position: absolute;
-  font-weight: bold;
-  left: calc(50% - 111px);
-}
-
 h1, h2, h3, h4, h5, p, a {
   text-decoration: none;
   color: $dark-gray;
