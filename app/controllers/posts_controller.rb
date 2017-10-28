@@ -2,9 +2,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @user = current_user
   end
 
   def show
+    @user = current_user
     @post = Post.includes(messages: :user).find(params[:id])
   end
 
@@ -38,6 +40,7 @@ class PostsController < ApplicationController
   end
 
   def like
+    @user = current_user
     @post = Post.find(params[:id])
     @post.liked_by current_user
     @chat_room = ChatRoom.find(params[:chat_room_id])
@@ -48,6 +51,7 @@ class PostsController < ApplicationController
   end
 
   def unlike
+    @user = current_user
     @post = Post.find(params[:id])
     @post.unliked_by current_user
     @chat_room = ChatRoom.find(params[:chat_room_id])
