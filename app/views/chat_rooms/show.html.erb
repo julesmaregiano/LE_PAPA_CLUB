@@ -4,7 +4,7 @@
 
 <div class="posts">
   <% @posts.each do |post| %>
-    <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
+    <%= render "posts/post", post: post, user_is_posts_author: post.user == @user %>
   <% end %>
 </div>
 
