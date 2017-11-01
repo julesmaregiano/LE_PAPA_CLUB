@@ -1,10 +1,6 @@
-@media mobile and (max-width: 500px){}
-
-@media desktop and (min-width: 500px) {}
-
 html, body, #bgimage {
-  background: $purple;
-  background-image: url('background4.png');
+  // background: $purple;
+  // background-image: url('background4.png');
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -66,4 +62,41 @@ h5 {
   font-family: $body-font;
   margin: 0px;
   text-decoration: none;
+}
+
+.iphone_home {
+ display: none
+}
+
+@media only screen and (min-width:495px) {
+ body {
+  background-color:#5e70e4
+ }
+ .iphone_home {
+  display:block;
+  position:absolute;
+  margin:auto;
+  left:0;
+  right:-11px;
+  top:0;
+  bottom:-32px;
+  width:440px;
+  height:850px;
+  z-index: 1000;
+  background-image: url('iphone.png');
+  background-size:contain;
+  background-position:50%;
+  background-repeat:no-repeat
+ }
+}
+
+
+.layout {
+  position: fixed;
+  top: 50px;
+  left: 100px;
+  height: 640px;
+  width: 363px;
+  position: relative;
+  background-image: url('background4.png');
 }

@@ -5,59 +5,63 @@
   </div>
 <% end %>
 
-<div class="section1">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8">
-        <h2>Bienvenue au Club des Darons</h2>
-        <p>
-          <span>Enfin un endroit</span><br>
-          <span>où on peut poser ses questions de père</span><br>
-          <span>à d'autres pères</span><br>
-          <span>qui ne vont pas casser les couilles</span><br>
-        </p>
-        <div class="install">
-          <%= image_tag "OS.svg", class: "img-responsive" %>
+<% content_for :homepage do %>
+  <div class="section1">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>Bienvenue au Club des Darons</h2>
+          <p>
+            <span>Enfin un endroit</span><br>
+            <span>où on peut poser ses questions de père</span><br>
+            <span>à d'autres pères</span><br>
+            <span>qui ne vont pas casser les couilles</span><br>
+          </p>
+          <div class="install">
+            <%= image_tag "OS.svg", class: "img-responsive" %>
+          </div>
+          <%= link_to "categories" do %>
+          <h4 class="btn btn-success">Accèdez au club</h4>
+          <% end %>
         </div>
-        <h2 class="btn btn-success">Accèdez au club</h2>
+        <div class="col-sm-4">
+          <%= image_tag "iphone.svg", id: "img-app" %>
+        </div>
       </div>
-      <div class="col-sm-4">
-        <%= image_tag "iphone.svg", id: "img-app" %>
+    </div>
+  </div>
+  <div class="section2 text-center">
+    <h2>La paternité c'est pas facile LES PAINS</h2>
+    <div class="container">
+      <div class="col-xs-3 block">
+      <h3>PAIN</h3>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+        </p>
+      </div>
+      <div class="col-xs-3 block">
+      <h3>PAIN</h3>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+        </p>
+      </div>
+      <div class="col-xs-3 block">
+      <h3>PAIN</h3>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+        </p>
+      </div>
+      <div class="col-xs-3 block">
+      <h3>PAIN</h3>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+        </p>
       </div>
     </div>
   </div>
-</div>
-<div class="section2 text-center">
-  <h2>La paternité c'est pas facile LES PAINS</h2>
-  <div class="container">
-    <div class="col-xs-3 block">
-    <h3>PAIN</h3>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
-      </p>
-    </div>
-    <div class="col-xs-3 block">
-    <h3>PAIN</h3>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
-      </p>
-    </div>
-    <div class="col-xs-3 block">
-    <h3>PAIN</h3>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
-      </p>
-    </div>
-    <div class="col-xs-3 block">
-    <h3>PAIN</h3>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
-      </p>
+  <div class="section3">
+    <div class="container">
+      <h2>Découvrez le Club des Darons</h2>
     </div>
   </div>
-</div>
-<div class="section3">
-  <div class="container">
-
-  </div>
-</div>
+<% end %>
