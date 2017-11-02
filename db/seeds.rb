@@ -19,7 +19,7 @@ Product.destroy_all
 Type.destroy_all
 
 
-User.create(email: "lepapa@lesdarons.club", first_name: "Jules", last_name: "Maregiano", date_of_birth: "26/07/1988", couple_situation: 1, role: 1, password: "123soleil")
+User.create(email: "jules@lepapa.club", first_name: "Jules", last_name: "Maregiano", date_of_birth: "26/07/1988", couple_situation: 1, role: 1, password: "123soleil")
 # User.create(email: "lea@lepapa.club", first_name: "Léa", last_name: "Durand", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
 # User.create(email: "james@lepapa.club", first_name: "James", last_name: "Lambert", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
 # User.create(email: "iso@lepapa.club", first_name: "Iso", last_name: "Hajjar", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
