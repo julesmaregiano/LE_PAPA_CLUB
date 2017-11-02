@@ -1,12 +1,19 @@
-<% content_for :navbar do %>
-  <div class="header">
-    <div class="container">
+<% content_for :homepage do %>
+
+
+  <div id="header" class="header container flex-horizontal">
+    <div class="logo">
+      <h1>Le CLUB</h1>
+    </div>
+    <div class="links">
+      <%= link_to "Maison", "#header"%>
+      <%= link_to "Section 1", "#section1"%>
+      <%= link_to "Section 2", "#section2"%>
+      <%= link_to "Section 3", "#section3"%>
     </div>
   </div>
-<% end %>
 
-<% content_for :homepage do %>
-  <div class="section1">
+  <div id="section1" class="section1">
     <div class="container">
       <div class="row">
         <div class="col-sm-8">
@@ -30,7 +37,7 @@
       </div>
     </div>
   </div>
-  <div class="section2 text-center">
+  <div id="section2" class="section2 text-center">
     <h2>La paternité c'est pas facile LES PAINS</h2>
     <div class="container">
       <div class="col-xs-3 block">
@@ -59,7 +66,7 @@
       </div>
     </div>
   </div>
-  <div class="section3">
+  <div id="section3" class="section3">
     <div class="container">
       <h2>Découvrez le Club des Darons</h2>
     </div>

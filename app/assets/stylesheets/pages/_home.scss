@@ -9,7 +9,13 @@
   height: 50px;
 }
 
+.header {
+  height: 90px;
+}
+
 .section1 {
+  position: relative;
+  height: 75vh;
   background: linear-gradient(55deg, rgba(175, 81, 191, 0.95), rgba(175,81,191,0.85));
   width: 100vw;
   & h2 {
@@ -23,6 +29,7 @@
 }
 
 .section2 {
+  height: 75vh;
   background: white;
   width: 100vw;
 }
