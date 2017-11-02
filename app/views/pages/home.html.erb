@@ -6,17 +6,17 @@
       <h1>Le CLUB</h1>
     </div>
     <div class="links">
-      <%= link_to "Maison", "#header"%>
-      <%= link_to "Section 1", "#section1"%>
-      <%= link_to "Section 2", "#section2"%>
-      <%= link_to "Section 3", "#section3"%>
+      <%= link_to "Maison", "#section1"%>
+      <%= link_to "Pourquoi ?", "#section2"%>
+      <%= link_to "L'app", "#section3"%>
+      <%= link_to "Section 4", "#section4"%>
     </div>
   </div>
 
   <div id="section1" class="section1">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-xs-12 col-sm-8">
           <h2>Bienvenue au Club des Darons</h2>
           <p>
             <span>Enfin un endroit</span><br>
@@ -31,7 +31,7 @@
           <h4 class="btn btn-success">Accèdez au club</h4>
           <% end %>
         </div>
-        <div class="col-sm-4">
+        <div class="col-xs-12 col-sm-4">
           <%= image_tag "iphone.svg", id: "img-app" %>
         </div>
       </div>
@@ -40,35 +40,65 @@
   <div id="section2" class="section2 text-center">
     <h2>La paternité c'est pas facile LES PAINS</h2>
     <div class="container">
-      <div class="col-xs-3 block">
-      <h3>PAIN</h3>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
-        </p>
-      </div>
-      <div class="col-xs-3 block">
-      <h3>PAIN</h3>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
-        </p>
-      </div>
-      <div class="col-xs-3 block">
-      <h3>PAIN</h3>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
-        </p>
-      </div>
-      <div class="col-xs-3 block">
-      <h3>PAIN</h3>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
-        </p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "Duss1.png", class: "homepage-avatar"%>
+          <h3>On est gentils</h3>
+          <p>
+          C'est pas pour autant qu'on est niais, bordel! Au club des darons pas de "Cette petite peau toute douce, ces petits pieds tout mignon". On se parle avec des mots normaux, et on tombe pas dans l'eau de rose qui constitue 95% des guides de parentage.
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "Gabin1.png", class: "homepage-avatar"%>
+          <h3>On est poilus</h3>
+          <p>
+          Putain et ça fait du bien. Posez toutes vos questions, des plus débiles, au plus originales. On va pas vous sermonner, on va vous aider. Quelqu'un a un problème dont vous connaissez la réponse ? Aidez-le.
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "Reno1.png", class: "homepage-avatar"%>
+          <h3>PAIN</h3>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "Marielle1.png", class: "homepage-avatar"%>
+          <h3>PAIN</h3>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+          </p>
+        </div>
       </div>
     </div>
   </div>
   <div id="section3" class="section3">
-    <div class="container">
+    <div class="container text-center">
       <h2>Découvrez le Club des Darons</h2>
+      <div class="row">
+        <div class="hidden-xs col-sm-6 col-md-4">
+          <%= image_tag "iphone.svg", id: "img-app" %>
+          </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+          <h3>PAIN</h3>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+          <h3>PAIN</h3>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+          </p>
+        </div>
+        <div class="hidden-xs col-sm-6 col-md-4">
+          <%= image_tag "iphone.svg", id: "img-app" %>
+        </div>
+      </div>
     </div>
+  </div>
+  <div id="section4" class="section4">
   </div>
 <% end %>

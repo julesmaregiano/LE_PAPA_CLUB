@@ -15,7 +15,7 @@
 
 .section1 {
   position: relative;
-  height: 75vh;
+  height: 65vh;
   background: linear-gradient(55deg, rgba(175, 81, 191, 0.95), rgba(175,81,191,0.85));
   width: 100vw;
   & h2 {
@@ -29,7 +29,6 @@
 }
 
 .section2 {
-  height: 75vh;
   background: white;
   width: 100vw;
 }
@@ -45,4 +44,8 @@
 .section3 {
   background: linear-gradient(55deg, rgba(175, 81, 191, 0.95), rgba(175,81,191,0.85));
   width: 100vw;
+}
+
+.homepage-avatar {
+  height: 260px;
 }
