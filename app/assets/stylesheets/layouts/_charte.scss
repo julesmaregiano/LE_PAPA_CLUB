@@ -64,7 +64,7 @@ h5 {
   text-decoration: none;
 }
 
-.iphone_home {
+.iphone-home {
  display: none
 }
 
@@ -72,31 +72,35 @@ h5 {
  body {
   background-color:#5e70e4
  }
- .iphone_home {
-  display:block;
-  position:absolute;
-  margin:auto;
-  left:0;
-  right:-11px;
-  top:0;
-  bottom:-32px;
-  width:440px;
-  height:850px;
-  z-index: 1000;
+ .iphone-home {
+  display: block;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: -11px;
+  top: 0;
+  bottom: -32px;
+  width: 440px;
+  height: 850px;
+  z-index: 100;
   background-image: url('iphone.png');
-  background-size:contain;
-  background-position:50%;
-  background-repeat:no-repeat
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat
  }
 }
 
 
 .layout {
-  position: fixed;
-  top: 50px;
-  left: 100px;
-  height: 640px;
+  display: block;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: -11px;
+  top: 0;
+  bottom: -32px;
   width: 363px;
-  position: relative;
+  height: 640px;
+  z-index: 99;
   background-image: url('background4.png');
 }
