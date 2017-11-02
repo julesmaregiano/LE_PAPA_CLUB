@@ -1,12 +1,12 @@
 .form-registration {
-  margin-top: 80px;
+  margin-top: 5px;
   background: rgba(0,0,0,0.5);
   border-radius: 10px;
   padding: 15px;
 
   h2 {
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-align: center;
     color: white;
     text-shadow: 2px 2px 1px $yellow;
@@ -23,6 +23,7 @@
     color: lightgrey;
     font-style: italic;
     font-size: 14px;
+    margin: 2px 0px;
   }
 
   .form-inline > .form-group {
@@ -87,22 +88,22 @@
 
 .control-label {
   height: auto;
+  margin-bottom: 0px;
 }
 
 .form-control {
   background: $purple;
   border: 0px solid white;
   box-shadow: none;
-  font-size: 20px;
+  font-size: 17px;
   color: white;
   height: auto;
-  border-bottom: 4px solid transparent;
-
+  border-bottom: 4px solid $purple;
+  border-radius: 25px 7px 0px 0px;
   &:focus {
-    outline: none;
+    border-radius: 25px 7px 0px 0px;
     color: white;
     border-bottom: 4px solid $yellow;
-    border-radius: 0px;
     box-shadow: none;
   }
 }
@@ -111,9 +112,6 @@
   display: flex;
 }
 
-.required {
-  border: none;
-  & abbr {
-    border: none;
-  }
+#sign-in {
+  margin-top: 80px;
 }
