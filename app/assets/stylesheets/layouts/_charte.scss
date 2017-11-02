@@ -83,7 +83,7 @@ h5 {
   width: 440px;
   height: 850px;
   z-index: 100;
-  background-image: url('iphone.png');
+  background-image: url('iphone-empty.png');
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat
@@ -96,11 +96,10 @@ h5 {
   position: absolute;
   margin: auto;
   left: 0;
-  right: -11px;
-  top: 0;
-  bottom: -32px;
+  right: 0px;
+  top: 155px;
   width: 363px;
   height: 640px;
-  z-index: 99;
+  z-index: 101;
   background-image: url('background4.png');
 }

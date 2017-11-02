@@ -1,42 +1,36 @@
-<div class="container">
-  <div class="row navbar-space">
+<%= render "posts/post", post: @post, user_is_posts_author: @post.user == current_user %>
 
-    <%= render "posts/post", post: @post, user_is_posts_author: @post.user == current_user %>
+<div class="messages">
+  <% @post.messages.each do |message| %>
+    <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+  <% end %>
+</div>
 
-    <div class="messages">
-      <% @post.messages.each do |message| %>
-        <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
-      <% end %>
-    </div>
+<!-- Trigger Modale -->
+<div class="bottom-navbar">
+  <button type="button" id="show-modal" class="cute-button-purple text-center" data-toggle="modal" data-target="#CreateMessageModal">
+    Répondre
+  </button>
+</div>
 
-    <!-- Trigger Modale -->
-    <div class="bottom-navbar">
-      <button type="button" id="show-modal" class="cute-button-purple text-center" data-toggle="modal" data-target="#CreateMessageModal">
-        Répondre
-      </button>
-    </div>
-
-    <!-- Modale -->
-    <div class="modal fade" id="CreateMessageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModale"></button>
-          </div>
-          <div class="modal-body">
-            <div id="create-message">
-              <%= simple_form_for [ @post.chat_room, @post, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
-                <%= f.input :content, label: false %>
-            </div>
-          </div>
-          <div class="modal-footer">
-              <%= f.button :submit, class: 'cute-button'%>
-            <% end %>
-          </div>
+<!-- Modale -->
+<div class="modal fade" id="CreateMessageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModale"></button>
+      </div>
+      <div class="modal-body">
+        <div id="create-message">
+          <%= simple_form_for [ @post.chat_room, @post, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+            <%= f.input :content, label: false %>
         </div>
       </div>
+      <div class="modal-footer">
+          <%= f.button :submit, class: 'cute-button'%>
+        <% end %>
+      </div>
     </div>
-
   </div>
 </div>
 
