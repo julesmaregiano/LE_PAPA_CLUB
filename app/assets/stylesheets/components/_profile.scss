@@ -25,12 +25,13 @@
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
-  height: 33vh
+  height: 210px;
 }
 
 .kid-card {
   display: inline-grid;
   float: left;
+  height: 190px;
   margin: 5% 2.5%;
   position: relative;
 }

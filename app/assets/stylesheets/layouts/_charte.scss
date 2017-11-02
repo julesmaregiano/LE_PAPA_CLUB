@@ -69,15 +69,12 @@ h5 {
 }
 
 @media only screen and (min-width:495px) {
- body {
-  background-color:#5e70e4
- }
  .iphone-home {
   display: block;
   position: absolute;
   margin: auto;
   left: 0;
-  right: -11px;
+  right: 0px;
   top: 0;
   bottom: -32px;
   width: 440px;
@@ -90,16 +87,37 @@ h5 {
  }
 }
 
-
 .layout {
   display: block;
   position: absolute;
   margin: auto;
-  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 101;
+  background: transparent;
+  background-image: url('background4.png');
+  overflow-y: hidden;
+  overflow: auto;
+}
+
+@media only screen and (min-width:495px) {
+ body {
+  background-color: $purple;
+  & .layout {
+  border-radius: none;
+  display: block;
+  position: relative;
+  margin: auto;
+  left: -6px;
   right: 0px;
-  top: 155px;
-  width: 363px;
-  height: 640px;
+  top: 154px;
+  width: 367px;
+  height: 645px;
   z-index: 101;
   background-image: url('background4.png');
+  overflow-y: hidden;
+  overflow: auto;
+    }
+  }
 }
+
