@@ -1,6 +1,6 @@
 html, body, #bgimage {
-  background: $purple;
-  background-image: url('background4.png');
+  // background: $purple;
+  // background-image: url('background4.png');
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -62,4 +62,44 @@ h5 {
   font-family: $body-font;
   margin: 0px;
   text-decoration: none;
+}
+
+.iphone-home {
+ display: none
+}
+
+@media only screen and (min-width:495px) {
+ body {
+  background-color:#5e70e4
+ }
+ .iphone-home {
+  display: block;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: -11px;
+  top: 0;
+  bottom: -32px;
+  width: 440px;
+  height: 850px;
+  z-index: 100;
+  background-image: url('iphone-empty.png');
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat
+ }
+}
+
+
+.layout {
+  display: block;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0px;
+  top: 155px;
+  width: 363px;
+  height: 640px;
+  z-index: 101;
+  background-image: url('background4.png');
 }

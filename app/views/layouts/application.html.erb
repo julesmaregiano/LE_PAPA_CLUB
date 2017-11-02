@@ -14,14 +14,22 @@
   <link rel="manifest" href="/manifest.json" />
 <meta name="apple-mobile-web-app-capable" content="yes"></head>
   <body>
-    <% if content_for?(:navbar) %>
-        <%= yield(:navbar) %>
-    <% else %>
-      <%= render 'shared/navbar' %>
-    <% end %>
     <!-- Remettre la ligne suivante entre pe ruby pour ravoir les alertes -->
     <!-- render 'shared/flashes' -->
-    <%= yield %>
+
+    <% if content_for?(:homepage) %>
+      <%= yield(:homepage) %>
+    <% else %>
+      <div class="iphone-home"></div>
+      <div class="layout">
+        <% if content_for?(:navbar) %>
+            <%= yield(:navbar) %>
+        <% else %>
+          <%= render 'shared/navbar' %>
+        <% end %>
+        <%= yield %>
+      </div>
+    <% end %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
     <%= yield(:after_js) %>
