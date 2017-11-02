@@ -8,6 +8,11 @@
   height: 30%;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
 .square-card {
   display: inline-grid;
   justify-content: center;
