@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     render :navbar => false
+    @contact = Contact.new
   end
 
   def categories

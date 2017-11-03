@@ -1,10 +1,11 @@
 .navbar {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0));
+  background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0));
   display: flex;
   justify-content: space-between;
   color: $purple;
   padding: 0px;
   margin: 0px;
+  margin-bottom: 5px;
   height: 7%;
   width: 100%;
   z-index: 100;

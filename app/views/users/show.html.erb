@@ -1,7 +1,7 @@
 <div class="container carousel text-center">
 </div>
 
-<div class="profile-background white-background navbar-space">
+<div class="profile-background white-background">
   <div class="profile-top">
     <% if @user.profile_pic? %>
       <%= cl_image_tag @user.profile_pic.path, width: 200, height: 200, crop: :fill, class: "avatar-profile" %>

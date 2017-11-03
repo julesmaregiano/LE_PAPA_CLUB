@@ -1,5 +1,5 @@
 .home-card {
-  height: 31%;
+  height: 30%;
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -10,8 +10,8 @@
   h2 {
     opacity: 1 !important;
     text-align : center;
-    color: $purple;
-    text-shadow: 2px 2px 0px $yellow;
+    color: white;
+    text-shadow: 2px 2px 0px $green;
     &:hover {
     font-weight: bold;
     color: white;
