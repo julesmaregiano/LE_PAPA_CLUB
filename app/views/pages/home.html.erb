@@ -1,9 +1,8 @@
 <% content_for :homepage do %>
-
-
+<div class="homepage">
   <div id="header" class="header container flex-horizontal">
     <div class="logo">
-      <h1>Le CLUB</h1>
+      <h2>Le CLUB</h2>
     </div>
     <div class="links">
       <%= link_to "Maison", "#section1"%>
@@ -17,18 +16,18 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-8">
-          <h2>Bienvenue au Club des Darons</h2>
+          <h1><span>Bienvenue au <strong>Club des Darons</strong></span></h1>
           <p>
-            <span>Enfin un endroit</span><br>
-            <span>où on peut poser ses questions de père</span><br>
-            <span>à d'autres pères</span><br>
-            <span>qui ne vont pas casser les couilles</span><br>
+            <span>Jeune Daron, tu ne sais pas comment t'y prendres ?</span><br>
+            <span>C'est normal.</span><br>
+            <span>Pose ici toutes tes questions</span><br>
+            <span>Et reçoit les réponses d'autres Darons en quelques instants.</span><br>
           </p>
           <div class="install">
             <%= image_tag "OS.svg", class: "img-responsive" %>
           </div>
           <%= link_to "categories" do %>
-          <h4 class="btn btn-success">Accèdez au club</h4>
+          <h3 class="btn-lg  btn btn-success">Accèdez au club</h3>
           <% end %>
         </div>
         <div class="col-xs-12 col-sm-4">
@@ -38,33 +37,33 @@
     </div>
   </div>
   <div id="section2" class="section2 text-center">
-    <h2>La paternité c'est pas facile LES PAINS</h2>
     <div class="container">
       <div class="row">
+        <h1><span><strong>Pas facile</strong> d'être un daron <strong>?</strong></span></h1>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <%= image_tag "Duss1.png", class: "homepage-avatar"%>
-          <h3>On est gentils</h3>
+          <h3><span>On est gentils</span></h3>
           <p>
           C'est pas pour autant qu'on est niais, bordel! Au club des darons pas de "Cette petite peau toute douce, ces petits pieds tout mignon". On se parle avec des mots normaux, et on tombe pas dans l'eau de rose qui constitue 95% des guides de parentage.
           </p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <%= image_tag "Gabin1.png", class: "homepage-avatar"%>
-          <h3>On est poilus</h3>
+          <h3><span>On est poilus</span></h3>
           <p>
           Putain et ça fait du bien. Posez toutes vos questions, des plus débiles, au plus originales. On va pas vous sermonner, on va vous aider. Quelqu'un a un problème dont vous connaissez la réponse ? Aidez-le.
           </p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <%= image_tag "Reno1.png", class: "homepage-avatar"%>
-          <h3>PAIN</h3>
+          <h3><span>On a des bonnes idées</span></h3>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+          La dernière fois, Alex nous a font une démo de comment stériliser le lait de son mioche tout en préparant un excellent martini. Toi aussi partage tes idées.
           </p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <%= image_tag "Marielle1.png", class: "homepage-avatar"%>
-          <h3>PAIN</h3>
+          <h3><span>PAIN</span></h3>
           <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
           </p>
@@ -74,31 +73,43 @@
   </div>
   <div id="section3" class="section3">
     <div class="container text-center">
-      <h2>Découvrez le Club des Darons</h2>
+      <h1><span>Que fait <strong>l'application</strong> ?<span></h1>
       <div class="row">
         <div class="hidden-xs col-sm-6 col-md-4">
           <%= image_tag "iphone.svg", id: "img-app" %>
           </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
-          <h3>PAIN</h3>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+          <h3><span>Transmet le savoir</span></h3>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+          Ecrits par des professionnels, des papas, ou des gens qui n'y connaissent absolument rien, nous proposons pas mal d'articles pour devenir un meilleur daron pour votre mioche.
           </p>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
-          <h3>PAIN</h3>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <h3><span>Le chat entre darons</span> </h3>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem a atque pariatur est iste dignissimos quaerat dolore assumenda quod perferendis.
+          Choisissez un sujet et posez votre question. Entrez en contact avec des darons qui ont rencontrés les mêmes problèmes, échangez vos bonnes idées.
           </p>
         </div>
-        <div class="hidden-xs col-sm-6 col-md-4">
+        <div class="hidden-xs col-sm-6 col-md-4 col-md-offset-2">
           <%= image_tag "iphone.svg", id: "img-app" %>
         </div>
       </div>
     </div>
   </div>
   <div id="section4" class="section4">
+    <div class="container text-center">
+      <div class="row">
+        <h1><strong>Envie</strong> d'aider ?</h1>
+        <h3>On attends que ça ! Envoie-nous un message sur l'app ou ici</h3>
+        <%= simple_form_for mail do %>
+          <%= f.input :email, required: false %>
+          <%= f.input :name, required: false %>
+          <%= f.button :submit, "Se connecter", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
 <% end %>

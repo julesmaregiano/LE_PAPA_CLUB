@@ -1,18 +1,16 @@
-<div class="container navbar-space">
-  <% @products.each do |product| %>
+<% @products.each do |product| %>
+  <div class="card-design">
     <%= link_to product.link, target: :_blank do %>
-      <div class="card-design">
-        <div class="article-top">
-          <h1><%= product.name %></h1>
-        </div>
-        <div class="article-preview text-center">
-          <% if product.image_small_url? %>
-            <%= image_tag product.image_small_url, class: 'product-image' %>
-          <% end %>
-          <p><%= product.subtitle %></p>
-        </div>
+      <div class="article-top">
+        <h1><%= product.name %></h1>
+      </div>
+      <div class="article-preview text-center">
+        <% if product.image_small_url? %>
+          <%= image_tag product.image_small_url, class: 'product-image' %>
+        <% end %>
+        <p><%= product.subtitle %></p>
       </div>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 

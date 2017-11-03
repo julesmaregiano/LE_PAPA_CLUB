@@ -1,17 +1,16 @@
-<div class="navbar-space">
-  <% @articles.each do |article| %>
-    <div class="card-design article">
-      <%= link_to article_path(article) do %>
-        <div class="article-top flex-horizontal">
-          <h1><%= article.title %></h1>
-        </div>
-    <% end %>
-      <div class="article-preview">
-        <% if article.photo? %>
-          <%= cl_image_tag article.photo.path, crop: :fill, style: 'width: 100%; margin: 0px;' %>
-        <% end %>
-        <h4><%= article.content.first(100) + ".." %></h4>
+<% @articles.each do |article| %>
+  <div class="card-design">
+    <%= link_to article_path(article) do %>
+      <div class="article-top flex-horizontal">
+        <h1><%= article.title %></h1>
       </div>
-    </div>
   <% end %>
-</div>
+    <div class="article-preview">
+      <% if article.photo? %>
+        <%= cl_image_tag article.photo.path, crop: :fill, style: 'width: 100%; margin: 0px;' %>
+      <% end %>
+      <h4><%= article.content.first(100) + ".." %></h4>
+    </div>
+  </div>
+<% end %>
+

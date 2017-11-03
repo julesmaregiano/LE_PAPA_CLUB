@@ -2,7 +2,7 @@
 .posts {
   padding: 10px;
   border-top: none;
-  overflow: scroll;
+  // overflow: scroll;
   width: 100%;
 }
 
@@ -84,6 +84,10 @@
   color: white;
   padding: 7px 3px;
   border-radius: 3px;
+  &:hover {
+    text-decoration: none;
+    color: $green;
+  }
 }
 
 .liked {

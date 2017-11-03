@@ -95,7 +95,7 @@ h5 {
   width: 100vw;
   z-index: 101;
   background: transparent;
-  background-image: url('background4.png');
+  background-color: $purple;
   overflow-y: hidden;
   overflow: auto;
 }
@@ -110,11 +110,11 @@ h5 {
   margin: auto;
   left: -6px;
   right: 0px;
-  top: 136px;
+  top: 154px;
   width: 367px;
-  height: 645px;
+  height: 665px;
   z-index: 101;
-  background-image: url('background4.png');
+  background-color: $purple;
   overflow-y: hidden;
   overflow: auto;
     }
