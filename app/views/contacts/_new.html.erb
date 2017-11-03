@@ -1,0 +1,10 @@
+<%= simple_form_for Contact.new do |f| %>
+  <div class="form-inline">
+    <%= f.input :name, required: false %>
+    <%= f.input :email, required: false %>
+  </div>
+  <div class="form-inline">
+    <%= f.input :message, as: :text, required: false %>
+  </div>
+    <%= f.button :submit, "Envoyer", class: "btn-lg btn btn-success" %>
+<% end %>

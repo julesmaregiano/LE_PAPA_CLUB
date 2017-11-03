@@ -11,7 +11,7 @@
   & h1 {
     color: white;
     font-size: 45px;
-    margin-bottom: 20px;
+    margin: 20px 0px;
   }
   & p {
     font-size: 17px;
@@ -22,6 +22,22 @@
   & h3{
     font-weight: bold;
   }
+  & .form-control {
+    width: 100%;
+    background-color: white;
+  }
+  & .form-group {
+    width: 100%;
+    & label {
+      color: $yellow;
+      width: 100%;
+    }
+    & input {
+    }
+  }
+  & #contact_message {
+    width: 100%
+  }
 }
 
 .img-responsive {
@@ -31,6 +47,10 @@
 
 .header {
   height: 90px;
+  & a {
+    color: $green;
+    opacity: 0.5;
+  }
 }
 
 .section1 {
@@ -79,12 +99,27 @@
 }
 
 .section4 {
+  min-height: 45vh;
   background: white;
   & h1 {
     color: $purple;
   }
 }
 
+.footer {
+
+}
+
 .homepage-avatar {
   height: 260px;
+}
+
+#new_contact {
+  margin: 20px 0px 40px 0px;
+  background: $purple;
+  padding: 20px;
+  border-radius: 14px;
+  & .btn {
+    margin: 15px 0px 5px 0px;
+  }
 }
