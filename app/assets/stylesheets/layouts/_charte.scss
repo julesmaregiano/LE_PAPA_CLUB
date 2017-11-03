@@ -104,15 +104,15 @@ h5 {
  body {
   background-color: $purple;
   & .layout {
-  border-radius: none;
+  border-radius: 2px;
   display: block;
   position: relative;
   margin: auto;
   left: -6px;
   right: 0px;
-  top: 154px;
+  top: 137px;
   width: 367px;
-  height: 665px;
+  height: 682px;
   z-index: 101;
   background-color: $purple;
   overflow-y: hidden;
