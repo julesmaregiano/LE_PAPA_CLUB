@@ -6,13 +6,13 @@ class PostsController < ApplicationController
       format.html
       format.js { render 'shared/post_page' }
     end
-
     @user = current_user
   end
 
   def show
     @user = current_user
     @post = Post.includes(messages: :user).find(params[:id])
+    @author = @post.user
   end
 
   def create
