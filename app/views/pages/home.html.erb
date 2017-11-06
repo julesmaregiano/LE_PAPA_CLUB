@@ -5,10 +5,10 @@
       <h2 id="logo-cdd">Le Club des Darons</h2>
     </div>
     <div class="links">
-      <%= link_to "Maison", "#section1"%>
-      <%= link_to "Pourquoi ?", "#section2"%>
-      <%= link_to "L'app", "#section3"%>
-      <%= link_to "Section 4", "#section4"%>
+      <%= link_to "Maison", "#section1", class: "scroll"%>
+      <%= link_to "Pourquoi ?", "#section2", class: "scroll"%>
+      <%= link_to "L'app", "#section3", class: "scrol"%>
+      <%= link_to "Section 4", "#section4", class: "scrol"%>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
         <div class="col-xs-12 col-sm-8">
           <h1><span>Bienvenue au <strong>Club des Darons</strong></span></h1>
           <p>
-            <span>Jeune Daron, tu ne sais pas comment t'y prendres ?</span><br>
+            <span>Jeune Daron, tu ne sais pas comment t'y prendre ?</span><br>
             <span>C'est normal.</span><br>
             <span>Pose ici toutes tes questions</span><br>
             <span>Et reçoit les réponses d'autres Darons en quelques instants.</span><br>
@@ -40,28 +40,28 @@
     <div class="container">
       <div class="row">
         <h1><span><strong>Pas facile</strong> d'être un daron <strong>?</strong></span></h1>
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-3 daron">
           <%= image_tag "Duss1.png", class: "homepage-avatar"%>
           <h3><span>On est gentils</span></h3>
           <p>
           C'est pas pour autant qu'on est niais, bordel! Au club des darons pas de "Cette petite peau toute douce, ces petits pieds tout mignon". On se parle avec des mots normaux, et on tombe pas dans l'eau de rose qui constitue 95% des guides de parentage.
           </p>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-3 daron">
           <%= image_tag "Gabin1.png", class: "homepage-avatar"%>
           <h3><span>On est poilus</span></h3>
           <p>
           Putain et ça fait du bien. Posez toutes vos questions, des plus débiles, au plus originales. On va pas vous sermonner, on va vous aider. Quelqu'un a un problème dont vous connaissez la réponse ? Aidez-le.
           </p>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-3 daron">
           <%= image_tag "Reno1.png", class: "homepage-avatar"%>
           <h3><span>On a des bonnes idées</span></h3>
           <p>
           La dernière fois, Alex nous a font une démo de comment stériliser le lait de son mioche tout en préparant un excellent martini. Toi aussi partage tes idées.
           </p>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-3 daron">
           <%= image_tag "Marielle1.png", class: "homepage-avatar"%>
           <h3><span>Certains ont une moustache</span></h3>
           <p>
@@ -75,10 +75,10 @@
     <div class="container text-center">
       <h1><span>Que fait <strong>l'application</strong> ?<span></h1>
       <div class="row">
-        <div class="hidden-xs col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <%= image_tag "iphone.svg", id: "img-app" %>
           </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <h3><span>Transmet le savoir</span></h3>
           <p>
           Ecrits par des professionnels, des papas, ou des gens qui n'y connaissent absolument rien, nous proposons pas mal d'articles pour devenir un meilleur daron pour votre mioche.
@@ -86,13 +86,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
           <h3><span>Le chat entre darons</span> </h3>
           <p>
           Choisissez un sujet et posez votre question. Entrez en contact avec des darons qui ont rencontrés les mêmes problèmes, échangez vos bonnes idées.
           </p>
         </div>
-        <div class="hidden-xs col-sm-6 col-md-4 col-md-offset-2">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <%= image_tag "iphone.svg", id: "img-app" %>
         </div>
       </div>
@@ -125,4 +125,17 @@
 
   </div>
 </div>
+<% end %>
+
+<% content_for :after_js do %>
+  <script>
+      $(document).ready(function() {
+        $('.scroll').on('click', function() { // Au clic sur un élément
+          var page = $(this).attr('href'); // Page cible
+          var speed = 750; // Durée de l'animation (en ms)
+        $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+        return false;
+      });
+    });
+  </script>
 <% end %>
