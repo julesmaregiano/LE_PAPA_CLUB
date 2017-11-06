@@ -57,6 +57,7 @@
 }
 
 .section1 {
+  min-height: 75vh;
   position: relative;
   background: linear-gradient(55deg, $purple, $purple);
   width: 100vw;
@@ -67,6 +68,7 @@
 }
 
 .section2 {
+  min-height: 75vh;
   background: white;
   width: 100vw;
   & h1{
