@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = @chat_room.posts.order(created_at: :desc).paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/post_page' }
+    end
+
     @user = current_user
   end
 
