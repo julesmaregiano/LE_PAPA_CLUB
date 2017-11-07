@@ -2,10 +2,14 @@
   <%= render "index" %>
 </div>
 
-<div class="posts">
+<div id="feed" class="posts">
   <% @posts.each do |post| %>
-    <%= render "posts/post", post: post, user_is_posts_author: post.user == @user %>
+    <%= render "posts/post", post: post, user_is_posts_author: @author == @user %>
   <% end %>
+</div>
+
+<div id="infinite-scrolling" class="pagination">
+  <%= will_paginate @posts %>
 </div>
 
 <!-- Button trigger modal -->
