@@ -1,16 +1,9 @@
-<% @articles.each do |article| %>
-  <div class="card-design">
-    <%= link_to article_path(article) do %>
-      <div class="article-top flex-horizontal">
-        <h1><%= article.title %></h1>
-      </div>
+<div id="feed" class="articles">
+  <% @articles.each do |article| %>
+    <%= render "articles/article", article: article %>
   <% end %>
-    <div class="article-preview">
-      <% if article.photo? %>
-        <%= cl_image_tag article.photo.path, crop: :fill, style: 'width: 100%; margin: 0px;' %>
-      <% end %>
-      <h4><%= article.content.first(100) + ".." %></h4>
-    </div>
-  </div>
-<% end %>
+</div>
 
+<div id="infinite-articles" class="pagination">
+  <%= will_paginate @articles %>
+</div>
