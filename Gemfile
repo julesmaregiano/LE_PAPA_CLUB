@@ -15,6 +15,7 @@ gem 'sprockets-es6'
 gem 'postmark-rails'
 gem 'mail_form'
 gem 'will_paginate'
+gem "letter_opener", group: :development
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

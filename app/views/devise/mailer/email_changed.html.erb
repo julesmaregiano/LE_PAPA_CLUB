@@ -1,8 +1,8 @@
-<div class="text-center">
-  <%= image_tag "Logo2.png", style: "height: 200px"%>
-</div>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-<h1>Salut !</h1>
+<div class="mail" style="font-family: Montserrat">
+
+<h4>Salut !</h4>
 
 <% if @resource.try(:unconfirmed_email?) %>
   <p>Juste un petit mot pour vous dire que votre adresse e-mail va être changée pour : <%= @resource.unconfirmed_email %>.</p>
@@ -10,4 +10,7 @@
   <p>Juste un petit mot pour vous dire que votre nouvel e-mail est : <%= @resource.email %>.</p>
 <% end %>
 
-<a href="https://www.lesdarons.club"><p>Les Darons.</p></a>
+<p>Les Darons.</p>
+<p style="text-decoration: none">www.lesdarons.club</p>
+<a href="https://www.lesdarons.club"><img src="http://res.cloudinary.com/zanzibar/image/upload/c_scale,w_250/v1510235264/Logo2_iidoia.png" alt=""></a>
+</div>
