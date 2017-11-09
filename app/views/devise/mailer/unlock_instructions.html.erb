@@ -1,8 +1,8 @@
-<div class="text-center">
-  <%= image_tag "Logo2.png", style: "height: 200px"%>
-</div>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-<p>Salut !</p>
+<div class="mail" style="font-family: Montserrat">
+
+<h4>Salut !</h4>
 
 <p>Ton compte est bloqué car tu as essayé de te connecter trop de fois avec le mauvais mot de passe.</p>
 
@@ -10,5 +10,7 @@
 
 <p><%= link_to 'Débloquer mon compte.', unlock_url(@resource, unlock_token: @token) %></p>
 
-<a href="https://www.lesdarons.club"><p>Les Darons.</p></a>
-
+<p>Les Darons.</p>
+<p style="text-decoration: none">www.lesdarons.club</p>
+<a href="https://www.lesdarons.club"><img src="http://res.cloudinary.com/zanzibar/image/upload/c_scale,w_250/v1510235264/Logo2_iidoia.png" alt=""></a>
+</div>
