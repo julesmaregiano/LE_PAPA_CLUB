@@ -1,5 +1,12 @@
-<p>Welcome <%= @email %>!</p>
+<div class="text-center">
+  <%= image_tag "Logo2.png", style: "height: 200px"%>
+</div>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Salut !</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>Pour confirmer votre mail et devenir un daron, un vrai :</p>
+
+<p><%= link_to 'Cliquez-ici.', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<a href="https://www.lesdarons.club"><p>Les Darons.</p></a>
+

@@ -1,7 +1,13 @@
-<p>Hello <%= @email %>!</p>
+<div class="text-center">
+  <%= image_tag "Logo2.png", style: "height: 200px"%>
+</div>
+
+<h1>Salut !</h1>
 
 <% if @resource.try(:unconfirmed_email?) %>
-  <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
+  <p>Juste un petit mot pour vous dire que votre adresse e-mail va être changée pour : <%= @resource.unconfirmed_email %>.</p>
 <% else %>
-  <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
+  <p>Juste un petit mot pour vous dire que votre nouvel e-mail est : <%= @resource.email %>.</p>
 <% end %>
+
+<a href="https://www.lesdarons.club"><p>Les Darons.</p></a>
