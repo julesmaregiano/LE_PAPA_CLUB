@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
-    @liked_posts = @user.find_up_voted_items.sort_by(&:created_at).paginate(page: params[:page])
+    @liked_posts = @user.find_up_voted_items.sort_by(&:created_at)
     @babies = @user.babies
     respond_to do |format|
       format.html
