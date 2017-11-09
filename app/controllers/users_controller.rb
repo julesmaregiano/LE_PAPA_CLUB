@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @my_posts = @user.posts.sort_by(&:created_at)
+    @posts = @user.posts.paginate(page: params[:page])
     @liked_posts = @user.find_up_voted_items.sort_by(&:created_at)
     @babies = @user.babies
     respond_to do |format|

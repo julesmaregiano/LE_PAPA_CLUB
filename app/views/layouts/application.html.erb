@@ -29,6 +29,9 @@
         <% end %>
         <%= yield %>
       </div>
+        <% if content_for?(:modal) %>
+          <%= yield(:modal) %>
+        <% end %>
     <% end %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>

@@ -45,15 +45,18 @@
   <!-- Tab panes -->
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="home">
-        <div class="my-likes">
-          <% if @my_posts.empty? %>
+        <div id="feed" class="my-likes">
+          <% if @posts.empty? %>
             <div class="empty-tab card-design text-center">
               <h4>Vous n'avez encore rien posté. Ca arrive même aux meilleurs.</h4>
             </div>
           <% else %>
-            <% @my_posts.each do |post| %>
-              <%= render "posts/post", post: post, user_is_posts_author: post.user == current_user %>
+            <% @posts.each do |post| %>
+              <%= render "posts/post", post: post %>
             <% end %>
+              <div id="infinite-scrolling" class="pagination">
+                <%= will_paginate @posts %>
+              </div>
           <% end %>
         </div>
       </div>

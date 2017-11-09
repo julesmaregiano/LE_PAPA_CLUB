@@ -4,7 +4,7 @@
 
 <div id="feed" class="posts">
   <% @posts.each do |post| %>
-    <%= render "posts/post", post: post, user_is_posts_author: @author == @user %>
+    <%= render "posts/post", post: post %>
   <% end %>
 </div>
 
@@ -12,35 +12,37 @@
   <%= will_paginate @posts %>
 </div>
 
-<!-- Button trigger modal -->
-<div class="bottom-navbar">
-  <button type="button" id="show-modal" class="cute-button-purple text-center" data-toggle="modal" data-target="#CreatePostModal">
-    Demander
-  </button>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="CreatePostModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModale"></button>
-      </div>
-      <div class="modal-body">
-        <div id="create-post">
-          <%= simple_form_for [ @chat_room, Post.new ], remote: true, html: {autocomplete: "off" } do |f| %>
-            <%= f.input :content, placeholder: "Lâchez-vous", label: false%>
-            <%= f.input :photo, as: :attachinary %>
+<% content_for :modal do %>
+
+  <!-- Button trigger modal -->
+  <div class="bottom-navbar">
+    <button type="button" id="show-modal" class="cute-button-purple text-center" data-toggle="modal" data-target="#CreatePostModal">
+      Demander
+    </button>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="CreatePostModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModale"></button>
         </div>
-      </div>
-      <div class="modal-footer">
-          <%= f.button :submit, class: 'cute-button'%>
-        <% end %>
+        <div class="modal-body">
+          <div id="create-post">
+            <%= simple_form_for [ @chat_room, Post.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+              <%= f.input :content, placeholder: "Lâchez-vous", label: false%>
+              <%= f.input :photo, as: :attachinary %>
+          </div>
+        </div>
+        <div class="modal-footer">
+            <%= f.button :submit, class: 'cute-button'%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-
+<% end %>
 
 <% content_for :after_js do %>
   <script>
