@@ -1,0 +1,27 @@
+.product {
+  width: 100%;
+  margin-bottom: 5px;
+  & h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.product-image {
+  height: 120px;
+  padding: 10px 10px;
+}
+
+.size {
+}
+
+.quantity {
+  border: 2px solid $green;
+  font-style: bold;
+  color: $gray;
+  margin: 5px;
+  padding: 5px;
+}
+
+.buy-cta {
+  margin: 2px;
+}
