@@ -115,3 +115,10 @@
 #sign-in {
   margin-top: 80px;
 }
+
+#CreatePostModal, #CreateMessageModal {
+ & * #post_content, #message_content {
+  flex-grow: 1;
+  height: auto;
+ }
+}
