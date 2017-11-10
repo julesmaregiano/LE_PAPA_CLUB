@@ -1,9 +1,9 @@
 <div class="flex-horizontal">
   <% @chat_rooms.each do |chat_room| %>
     <%= link_to chat_room_path(chat_room) do %>
-      <div class="square-card flex-row"
-           style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)), url('<%= cl_image_path chat_room.photo.path, height: 180, width: 180, crop: :fill %>')">
-        <h2 class="<%= chat_room.id.to_i == params[:id].to_i ? "active-cr" : "" %>"><%= chat_room.name %></h2>
+      <div class="square-card flex-row <%= chat_room.id.to_i == params[:id].to_i ? "active-cr" : "" %>"
+           style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)), url('<%= cl_image_path chat_room.photo.path, height: 160, width: 160, crop: :fill %>')">
+        <h2><%= chat_room.name %></h2>
       </div>
     <% end %>
   <% end %>
