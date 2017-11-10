@@ -1,19 +1,16 @@
- <% content_for :navbar do %>
-      <%= render 'shared/navbar_sansback' %>
- <% end %>
 <div class="categories">
   <%= link_to articles_path do %>
-    <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @categories.first.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover;">
+    <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path @categories.first.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover;">
       <h2>Articles & Connaissances</h2>
     </div>
   <% end %>
   <%= link_to chat_room_path(ChatRoom.first) do %>
-    <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @categories.second.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover;">
+    <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path @categories.second.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover;">
       <h2>Le coin des Darons</h2>
     </div>
   <% end %>
   <%= link_to types_path do %>
-    <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @categories.third.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover; height: 34%;">
+    <div class="home-card" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path @categories.third.photo.path, height: 250, width: 450, crop: :fill %>') no-repeat center center; background-size: cover; height: 34%;">
       <h2>La télécommande magique</h2>
     </div>
   <% end %>
