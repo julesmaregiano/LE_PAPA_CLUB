@@ -25,7 +25,7 @@ User.create(email: "jules.maregiano@gmail.com", first_name: "Jules", last_name: 
 # User.create(email: "iso@lepapa.club", first_name: "Iso", last_name: "Hajjar", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
 User.create(email: "jmaregiano@gmail.com", first_name: Faker::HeyArnold.character, last_name:
 User.create(email: "james.lambert@gmail.com", username: "jamesl", first_name: "James", last_name: "Lmabert", date_of_birth: "25/07/1989", couple_situation: 1, role: 1, password: "123soleil")
-User.create(email: "nadjib.benredjem@gmail.com", username: "nadj-el-daron", first_name: "Nadjib", last_name: "Benredjem", date_of_birth: "19/06/1988", couple_situation: 1, role: 1, password: "123soleil")
+User.create(email: "nadjib@gmail.com", username: "nadj", first_name: "Nadjib", last_name: "Benredjem", date_of_birth: "19/06/1988", couple_situation: 1, role: 1, password: "123soleil")
 
 Faker::DrWho.specie, date_of_birth: Faker::Date.birthday(18, 65), couple_situation: 1, role: 1, password: "123soleil")
 puts "#{User.all.size} Users créés"
