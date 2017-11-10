@@ -24,6 +24,9 @@ User.create(email: "jules.maregiano@gmail.com", first_name: "Jules", last_name: 
 # User.create(email: "james@lepapa.club", first_name: "James", last_name: "Lambert", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
 # User.create(email: "iso@lepapa.club", first_name: "Iso", last_name: "Hajjar", date_of_birth: "05/12/1992", couple_situation: 1, role: 1, password: "123soleil")
 User.create(email: "jmaregiano@gmail.com", first_name: Faker::HeyArnold.character, last_name:
+User.create(email: "james.lambert@gmail.com", username: "jamesl", first_name: "James", last_name: "Lmabert", date_of_birth: "25/07/1989", couple_situation: 1, role: 1, password: "123soleil")
+User.create(email: "nadjib.benredjem@gmail.com", username: "nadj-el-daron", first_name: "Nadjib", last_name: "Benredjem", date_of_birth: "19/06/1988", couple_situation: 1, role: 1, password: "123soleil")
+
 Faker::DrWho.specie, date_of_birth: Faker::Date.birthday(18, 65), couple_situation: 1, role: 1, password: "123soleil")
 puts "#{User.all.size} Users créés"
 
@@ -42,9 +45,10 @@ puts "#{Category.all.size} catégories créées"
 users = [1, 2]
 category = [1, 2, 3, 4, 5]
 lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, beatae. Consequatur similique eveniet quasi accusamus neque iure beatae repellendus maxime, pariatur suscipit tempore quaerat ex iste esse labore eaque sit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi repellat aspernatur consectetur autem doloribus corporis sunt placeat odio, delectus, quo fugiat nulla deserunt, voluptas reiciendis rerum facilis perferendis modi at! "
-
+rock_article = "Aujourd'hui on repart de la base : Comment faire une couche. Et quel père modèle meilleur que The Rock pour illustrer notre propos. Première étape : Lavez et séchez correctement vos mains (vous pouvez utiliser une lingette pour bébé). The Rock se lave toujours les mains en particulier après avoir pratiqué le catch."
 
 5.times do Article.create(title: Faker::Book.title, content: lorem, photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1508769406/Dad1_csqoio.jpg", category: Category.all.sample, user: User.all.sample) end
+Article.create(title: "Apprenez à changer une couche comme The Rock", content: rock_article, photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1510341441/rock_diaper_cdmhza.jpg", category: Category.all.sample, user: User.all.sample)
 puts "#{Article.all.size} articles créés"
 
 ChatRoom.create(name: "Général", photo_url: "http://res.cloudinary.com/zanzibar/image/upload/v1507625860/DeGaulle_small_ogly9a.jpg")
