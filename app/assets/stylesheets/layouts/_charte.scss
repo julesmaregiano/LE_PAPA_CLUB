@@ -138,3 +138,26 @@ h5 {
 .pagination {
   display: none;
 }
+
+#login {
+  display: show;
+}
+#pwa {
+  display: none;
+}
+
+@media (max-width:495px) and (display-mode: browser) {
+  #login {
+    display: none;
+  }
+  #pwa {
+    display: show;
+  }
+}
+
+#pwa {
+  position: absolute;
+  z-index: 123456;
+  width: 100vw;
+  height: 100vh;
+}
