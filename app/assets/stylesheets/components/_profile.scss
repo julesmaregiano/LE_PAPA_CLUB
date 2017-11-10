@@ -24,15 +24,14 @@
   overflow-y: hidden;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  overflow: auto;
-  height: 210px;
+  // overflow: auto;
 }
 
 .kid-card {
   display: inline-grid;
   float: left;
   height: 190px;
-  margin: 5% 2.5%;
+  margin: 2px 6px;
   position: relative;
 }
 
