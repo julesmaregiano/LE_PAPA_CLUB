@@ -140,7 +140,7 @@ h5 {
 }
 
 #login {
-  display: show;
+  display: initial;
 }
 #pwa {
   display: none;
@@ -151,13 +151,7 @@ h5 {
     display: none;
   }
   #pwa {
-    display: show;
+    display: initial;
   }
 }
 
-#pwa {
-  position: absolute;
-  z-index: 123456;
-  width: 100vw;
-  height: 100vh;
-}
