@@ -1,13 +1,21 @@
-    <div class="card-design">
-      <%= link_to product.link, target: :_blank do %>
-        <div class="article-top">
-          <h3><%= product.name %></h3>
-        </div>
-        <div class="article-preview text-center">
-          <% if product.image_small_url? %>
-            <%= image_tag product.image_small_url, class: 'product-image' %>
-          <% end %>
-          <p><%= product.subtitle %></p>
-        </div>
+<div class="white-background product">
+  <%= link_to product.link, target: :_blank do %>
+    <div class="flex-horizontal-no-space">
+      <% if product.image_small_url? %>
+        <%= image_tag product.image_small_url, class: 'product-image' %>
       <% end %>
+      <div>
+        <h2><%= product.brand %></h2>
+        <h4><%= product.name %></h4>
+        <h4><%= product.description %></h4>
+      </div>
     </div>
+    <div class="flex-horizontal">
+      <div class="flex-horizontal">
+        <h4 class="quantity">x<%= product.quantity %></h4>
+        <h5 class="size"><%= product.size.name %></h5>
+      </div>
+      <p class="btn btn-sm btn-success buy-cta">Acheter</p>
+    </div>
+  <% end %>
+</div>
