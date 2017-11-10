@@ -1,19 +1,16 @@
-<% icon_sizes = Rails.configuration.serviceworker.icon_sizes %>
 {
-  "name": "Le Club des Darons",
   "short_name": "Le Club des Darons",
-  "start_url": "/categories",
+  "name": "Le Club des Darons",
   "icons": [
-  <% icon_sizes.map { |s| "#{s}x#{s}" }.each.with_index do |dim, i| %>
     {
-      "src": "<%= image_path "assets/favicon-#{dim}.png" %>",
-      "sizes": "<%= dim %>",
-      "type": "image/png
-"    }<%= i == (icon_sizes.length - 1) ? '' : ',' %>
-  <% end %>
-  ],
-  "theme_color": "#f92ac2",
-  "background_color": "#f92ac2",
+     "src": "LCDD192.png",
+     "type": "image/png",
+     "sizes": "192x192"
+    }
+   ],
+  "start_url": "/categories",
+  "theme_color": "#1b0b37",
+  "background_color": "#1b0b37",
   "display": "fullscreen",
   "orientation": "portrait"
 }

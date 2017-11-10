@@ -1,8 +1,8 @@
 html, body {
   // background: $purple;
   // background-image: url('background4.png');
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -24,7 +24,9 @@ h2 {
   margin: 0px;
   font-size: 22px;
   color: white;
-  text-shadow: 2px 2px 1px $purple;
+  text-shadow: 1px 1px 0px $purple;
+  border-bottom: 3px solid $yellow;
+  box-shadow: inset 0 -8px 0 $yellow;
 }
 
 // Noms des utilisateurs dans les chats
@@ -43,6 +45,10 @@ a, p {
   font-family: $body-font;
   text-align: justify;
   text-justify: inter-word;
+}
+
+abbr, label {
+  text-decoration: none !important;
 }
 
 i {
@@ -71,10 +77,12 @@ h5 {
   width: 440px;
   height: 850px;
   background-size: contain;
+  overflow: hidden;
 }
 
 @media only screen and (min-width:495px) {
  .iphone-home {
+  overflow: hidden;
   display: block;
   position: absolute;
   margin: auto;
@@ -137,3 +145,20 @@ h5 {
 .pagination {
   display: none;
 }
+
+#login {
+  display: initial;
+}
+#pwa {
+  display: none;
+}
+
+@media (max-width:495px) and (display-mode: browser) {
+  #login {
+    display: none;
+  }
+  #pwa {
+    display: initial;
+  }
+}
+

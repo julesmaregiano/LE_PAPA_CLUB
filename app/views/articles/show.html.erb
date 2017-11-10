@@ -1,35 +1,36 @@
+<div class="article-container">
+  <div id="article" class="white-background navbar-space">
+    <h1><%= @article.title %></h1>
+    <h5>Ecrit par <%= @article.user.first_name %> <%= @article.user.last_name %></h5>
+      <% if @article.photo? %>
+        <%= cl_image_tag @article.photo.path, crop: :fill, style: 'width: 100%; margin: 0px;' %>
+      <% end %>
+    <p><%= @article.content %></p>
+  </div>
 
-<div id="article" class="card-design navbar-space">
-  <h1><%= @article.title %></h1>
-  <h5>Ecrit par <%= @article.user.first_name %> <%= @article.user.last_name %></h5>
-    <% if @article.photo? %>
-      <%= cl_image_tag @article.photo.path, crop: :fill, style: 'width: 100%; margin: 0px;' %>
-    <% end %>
-  <p><%= @article.content %></p>
-</div>
+  <h2>Commentaires</h2>
 
-<div id="article comments" class="navbar-space card-design">
-  <h1>Commentaires</h1>
-
+  <div id="article comments" class="white-background">
     <% if @comments.empty? %>
-      <h4>Soyez le premier à commenter!</h4>
+      <div class="article-empty">
+        <h4>Soyez le premier à commenter!</h4>
+      </div>
     <% else %>
       <% @comments.last(5).each do |comment| %>
-        <%= render "messages/message", message: comment, user_is_messages_author: comment.user == current_user %>
+        <%= render "messages/message", message: comment %>
       <% end %>
     <% end %>
+  </div>
 
-
-
-  <h1>Plus d'articles</h1>
+  <h2>Plus d'articles</h2>
+  <div class="white-background">
     <% @random_articles.each do |article| %>
       <%= link_to article_path(article) do %>
         <div class="article-top flex-horizontal">
-          <h4><%= article.title %></h4>
+          <p><%= article.title %></p>
         </div>
       <% end %>
     <% end %>
+  </div>
 </div>
-
-
 

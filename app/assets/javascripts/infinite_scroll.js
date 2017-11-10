@@ -4,7 +4,7 @@ $(document).on('ready page:load', function () {
     $('.layout').on('scroll', function() {
       var more_posts_url = $('.pagination a.next_page').attr('href');
       console.log($('#feed').height() - $('.layout').scrollTop())
-      if (!isLoading && more_posts_url && ($('#feed').height() - $('.layout').scrollTop()) < 400 ) {
+      if (!isLoading && more_posts_url && ($('#feed').height() - $('.layout').scrollTop()) < 650 ) {
         console.log('Ca va charger!');
         isLoading = true;
         $.getScript(more_posts_url).done(function (data,textStatus,jqxhr) {

@@ -10,6 +10,11 @@
   }
 }
 
+.article {
+  margin-bottom: 5px;
+  background-color: white;
+}
+
 #article {
   & h5 {
     margin-bottom: 15px;
@@ -19,5 +24,14 @@
   }
   & p {
   padding: 10px 15px;
+  }
+}
+
+.article-container {
+  & h2 {
+    margin-top: 12px;
+  }
+  & h4 {
+    padding: 10px 2px;
   }
 }

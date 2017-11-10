@@ -1,4 +1,8 @@
-<div class="row">
+<% content_for :navbar do %>
+    <%= render 'shared/navbar_logo' %>
+<% end %>
+
+<div id="login" class="row">
   <div class="col-xs-12">
     <div id="sign-in" class="form-registration">
 
@@ -18,6 +22,36 @@
 
       <%= render "devise/shared/links" %>
     </div>
+    <div class="text-center">
+      <%= image_tag "Duss1.png", style: "height: 150px", class: "welcomeDuss"%>
+    </div>
   </div>
 </div>
 
+<div id="pwa" class="homepage">
+  <div class="container">
+    <div class="row">
+      <div class="pwa-content card-design col-xs-12">
+          <div class="text-center">
+            <h4>Suivez ces instructions pour installer l'app sur votre smartphone !</h4>
+          </div>
+          <div class="flex-horizontal">
+            <div>
+              <h3><span>Première étape</span></h3>
+              <p>Appuyez sur 'menu' (les 3 points en haut à droite du navigateur de votre smartphone.</p>
+            </div>
+              <i id="wel-i" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </div>
+        <div>
+          <h3><span>Deuxième étape</span></h3>
+          <p>Choisissez 'Ajouter à l'écran d'accueil'.</p>
+          <%= image_tag "add_to_homescreen.png", style: "height: 60px" %>
+        </div>
+        <div>
+          <h3><span>Troisième étape</span></h3>
+          <p>Appuyez sur 'Ajouter'. Vous pouvez accéder à l'app directement depuis l'écran principal de votre smartphone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,16 @@
 <% content_for :homepage do %>
 <div class="homepage">
-  <div id="header" class="header container flex-horizontal">
-    <div class="logo">
-      <h2 id="logo-cdd">Le Club des Darons</h2>
-    </div>
-    <div class="links">
-      <%= link_to "Maison", "#section1", class: "scroll"%>
-      <%= link_to "Pourquoi ?", "#section2", class: "scroll"%>
-      <%= link_to "L'app", "#section3", class: "scrol"%>
-      <%= link_to "Section 4", "#section4", class: "scrol"%>
+  <div id="header" class="header">
+    <div class="container flex-horizontal">
+      <div class="logo">
+        <h2 id="logo-cdd">Le Club des Darons</h2>
+      </div>
+      <div class="links">
+        <%= link_to "Maison", "#section1", class: "scroll"%>
+        <%= link_to "Pourquoi ?", "#section2", class: "scroll"%>
+        <%= link_to "L'app", "#section3", class: "scroll"%>
+        <%= link_to "Contact", "#section4", class: "scroll"%>
+      </div>
     </div>
   </div>
 
@@ -133,7 +135,7 @@
         $('.scroll').on('click', function() { // Au clic sur un élément
           var page = $(this).attr('href'); // Page cible
           var speed = 750; // Durée de l'animation (en ms)
-        $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+        $('html, body').animate( { scrollTop: $(page).offset().top -85 }, speed ); // Go
         return false;
       });
     });

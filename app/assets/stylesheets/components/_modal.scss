@@ -16,7 +16,11 @@
 }
 
 .modal {
-    padding-top: 4%;
+    &-dialog {
+      border-radius: 10px;
+      background-color: white;
+      max-width: 700px;
+    }
     &-backdrop{
         background-color: black;
         &.in{
@@ -36,16 +40,6 @@
     }
 }
 
-.modal-dialog {
-  border-radius: 10px 10px 0px 0px;
-  background-color: white;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-
 #show-modal {
   position: fixed;
   bottom: 7px;
@@ -54,6 +48,16 @@
   left: 50%;
   margin-left: -15%;
 }
+
+@media only screen and (min-width:495px) {
+  .modal-dialog {
+    top: 20vh;
+  }
+  #show-modal {
+    bottom: 10vh;
+  }
+}
+
 
 .dropdown-backdrop {
   z-index: 100;

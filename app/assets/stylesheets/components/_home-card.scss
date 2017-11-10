@@ -1,5 +1,10 @@
+.categories {
+  height: 100%;
+  overflow: hidden;
+}
+
 .home-card {
-  height: 30%;
+  height: 33%;
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -10,8 +15,6 @@
   h2 {
     opacity: 1 !important;
     text-align : center;
-    color: white;
-    text-shadow: 2px 2px 0px $green;
     &:hover {
     font-weight: bold;
     color: white;
